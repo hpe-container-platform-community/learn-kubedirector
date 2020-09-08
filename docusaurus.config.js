@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Learn Kubedirector',
-  tagline: 'Learning Resources for Kubedirector',
+  title: 'Learn Kubedirector!',
+  tagline: 'Education resources for learning Kubedirector',
   url: 'https://hpe-container-platform-community.github.io/',
   baseUrl: '/learn-kubedirector/',
   onBrokenLinks: 'throw',
@@ -58,7 +58,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} HPE.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Hewlett Packard Enterprise.`,
     },
   },
   presets: [

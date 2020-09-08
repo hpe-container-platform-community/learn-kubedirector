@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Easy to Use',
+    title: 'What is Kubedirector?',
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Kubedirector is a CNCF project that simplifies iimplementing stateful scaleout application clusters on Kubenetes.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Learning Kubedirector',
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        This website provides a structured and  progressive learning path to Kubedirector mastery.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Lab Environment',
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        A 'lab-in-a-box' is provided making experimenting with Kubedirector a cinch.
       </>
     ),
   },
