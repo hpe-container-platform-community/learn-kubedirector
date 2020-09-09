@@ -1,5 +1,5 @@
 ---
-id: lab-setup
+id: setup
 title: Setup
 ---
 

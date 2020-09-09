@@ -60,6 +60,9 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Hewlett Packard Enterprise.`,
     },
+    colorMode: {
+          defaultMode: 'light',
+    }
   },
   presets: [
     [

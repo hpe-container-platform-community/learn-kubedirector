@@ -1,5 +1,5 @@
 ---
-id: lab-overview 
+id: overview 
 title: Lab Overview
 ---
 

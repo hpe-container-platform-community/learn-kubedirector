@@ -1,5 +1,5 @@
 ---
-id: lab-prereqs
+id: prereqs
 title: Pre-requisites 
 ---
 
