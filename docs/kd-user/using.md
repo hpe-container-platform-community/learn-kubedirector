@@ -45,7 +45,7 @@ NAME          AGE
 ubuntu18.04   0m
 ```
 
-## Viewing KubeDirector cluster details
+## View KubeDirector cluster details
 
 We can retrieve the cluster details using the kubectl describe command.
 For example:
@@ -109,6 +109,92 @@ Status:
   State:                             configured
 Events:                              <none>
 ```
+
+## View KubeDirector cluster services
+
+You can query the KubeDirector cluster services with the following:  `kubectl get services -l kubedirector.hpe.com/kdcluster=CLUSTERNAME`
+
+For example:
+
+```
+$ kubectl get services -l kubedirector.hpe.com/kdcluster=ubuntu18.04
+NAME             TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+kdhs-q6nb9       ClusterIP      None            <none>        8888/TCP       4h49m
+s-kdss-gpdft-0   LoadBalancer   10.101.174.78   <pending>     22:44823/TCP   4h49m
+```
+
+Because we are running on Minikube, the LoadBalancer type makes the Service accessible through the `minikube service` command.
+
+```
+$ minikube service s-kdss-gpdft-0
+|-----------|----------------|----------------|------------------------|
+| NAMESPACE |      NAME      |  TARGET PORT   |          URL           |
+|-----------|----------------|----------------|------------------------|
+| default   | s-kdss-gpdft-0 | generic-ssh/22 | http://10.0.2.15:44823 |
+|-----------|----------------|----------------|------------------------|
+🎉  Opening service default/s-kdss-gpdft-0 in default browser...
+👉  http://10.0.2.15:44823
+```
+
+We can now access the ssh service:
+
+```
+$ ssh 10.0.2.15 -p 44823
+The authenticity of host '[10.0.2.15]:44823 ([10.0.2.15]:44823)' can't be established.
+ECDSA key fingerprint is SHA256:Dn6oo2QkGVHPKuyxZ4IsppQ5pdydwkJoWmtojnDC5Qo.
+ECDSA key fingerprint is MD5:2d:de:32:8e:da:4a:bc:c7:76:f3:77:8b:99:38:15:53.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[10.0.2.15]:44823' (ECDSA) to the list of known hosts.
+vagrant@10.0.2.15's password:
+```
+
+Note that we can't login yet because we haven't created a user inside the container.
+
+Let's do that now:
+
+```
+$ kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+kdss-gpdft-0                    1/1     Running   0          5h8m
+kubedirector-7f9d95c9d5-mpw22   1/1     Running   0          5h8m
+```
+
+Pod `kdss-gpdft-0` looks like it is our pod, let's check:
+
+```
+[vagrant@control-plane kubedirector]$ kubectl describe pods kdss-gpdft-0 
+Name:         kdss-gpdft-0
+Namespace:    default
+Priority:     0
+Node:         localhost.localdomain/10.0.2.15
+Start Time:   Wed, 09 Sep 2020 15:43:45 +0000
+Labels:       controller-revision-hash=kdss-gpdft-646b7c67d5
+              kubedirector.hpe.com/appCatalog=local
+              kubedirector.hpe.com/headless=ubuntu18.04
+              kubedirector.hpe.com/kdapp=ubuntu18x
+              kubedirector.hpe.com/kdcluster=ubuntu18.04
+              kubedirector.hpe.com/role=vanilla_ubuntu
+              statefulset.kubernetes.io/pod-name=kdss-gpdft-0
+Annotations:  kubedirector.hpe.com/kdapp-prettyName: Ubuntu 18.04
+Status:       Running
+IP:           172.17.0.4
+IPs:
+  IP:           172.17.0.4
+Controlled By:  StatefulSet/kdss-gpdft
+Containers:
+...
+```
+
+We can see the label `kubedirector.hpe.com/kdcluster=ubuntu18.04`
+
+Let's login to the container using kubectl:
+
+```
+$ kubectl exec -it kdss-gpdft-0 -- /bin/bash
+root@kdss-gpdft-0:/# 
+```
+
+TODO ... describe how to change the password
 
 ---
 
