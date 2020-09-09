@@ -24,5 +24,7 @@ In the Lab Browser UI open a new terminal and run:
 kubectl create -f deploy/example_clusters/cr-cluster-ubuntu18.04.yaml
 ```
 
+more content coming soon ...
+
 
 ## Inspecting clusters
