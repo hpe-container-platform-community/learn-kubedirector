@@ -3,7 +3,7 @@ id: concepts
 title: Concepts
 ---
 
-In this section we learn KubeDirector concepts.
+On this page we learn KubeDirector concepts.
 
 ## Node
 
