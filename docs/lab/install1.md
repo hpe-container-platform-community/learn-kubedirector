@@ -20,4 +20,6 @@ If you don't already have Vagrant, download and install the following software f
 
 ## Git Client
 
-Coming soon ...
+If you don't already have a git client installed, download and install the following software for your machine:
+
+- [Windows users](https://git-scm.com/download/win)|[OS X users](https://git-scm.com/download/mac)|[Linux users](https://git-scm.com/download/linux)
