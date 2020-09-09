@@ -5,7 +5,7 @@ title: Install - Part 3
 
 In this section we will build kubedirector from the source code and deploy it to minikube.
 
-## Build Kubedirector
+## Build KubeDirector
 
 You should have a browser open to [http://localhost:3000](http://localhost:3000) 
 as described in the section [Lab Install Part 2](lab/install2.md#test-minikube)
@@ -23,7 +23,7 @@ INFO[0004] Operator build complete.
 done
 ```
 
-## Deploy Kubedirector
+## Deploy KubeDirector
 
 In the Lab Browser UI terminal, enter the command `make deploy`.
 

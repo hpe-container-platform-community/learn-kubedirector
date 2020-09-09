@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Learn Kubedirector!',
-  tagline: 'Education resources for learning Kubedirector',
+  title: 'Learn KubeDirector!',
+  tagline: 'Education resources for learning KubeDirector',
   url: 'https://hpe-container-platform-community.github.io/',
   baseUrl: '/learn-kubedirector/',
   onBrokenLinks: 'throw',
@@ -9,9 +9,9 @@ module.exports = {
   projectName: 'learn-kubedirector',
   themeConfig: {
     navbar: {
-      title: 'Learn Kubedirector!',
+      title: 'Learn KubeDirector!',
       logo: {
-        alt: 'Learn Kubedirector!',
+        alt: 'Learn KubeDirector!',
         src: 'img/logo.svg',
       },
       items: [
@@ -52,15 +52,15 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Learn Kubedirector on GitHub',
+              label: 'Learn KubeDirector on GitHub',
               href: 'https://github.com/hpe-container-platform-community/learn-kubedirector',
             },
             {
-              label: 'Kubedirector Lab on GitHub',
+              label: 'KubeDirector Lab on GitHub',
               href: 'https://github.com/hpe-container-platform-community/kubedirector-lab',
             },
             {
-              label: 'Kubedirector on GitHub',
+              label: 'KubeDirector on GitHub',
               href: 'https://github.com/bluek8s/kubedirector',
             },
           ],

@@ -8,20 +8,20 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'What is Kubedirector?',
+    title: 'What is KubeDirector?',
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Kubedirector is a CNCF project that simplifies iimplementing stateful scaleout application clusters on Kubenetes.
+        KubeDirector is a CNCF project that simplifies iimplementing stateful scaleout application clusters on Kubenetes.
       </>
     ),
   },
   {
-    title: 'Learning Kubedirector',
+    title: 'Learning KubeDirector',
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        This website provides a structured and  progressive learning path to Kubedirector mastery.
+        This website provides a structured and  progressive learning path to KubeDirector mastery.
       </>
     ),
   },
@@ -30,7 +30,7 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        A 'lab-in-a-box' is provided making leanring and experimenting with Kubedirector a cinch.
+        A 'lab-in-a-box' is provided making leanring and experimenting with KubeDirector a cinch.
       </>
     ),
   },

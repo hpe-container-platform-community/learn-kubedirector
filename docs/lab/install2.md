@@ -31,7 +31,7 @@ This step can take quiet a long time - it needs to download a VM image around 2.
 vagrant up
 ```
 
-## Run the Kubedirector Lab UI
+## Run the KubeDirector Lab UI
 
 ```
 vagrant ssh -c ./run_lab.sh

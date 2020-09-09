@@ -3,7 +3,7 @@ id: concepts
 title: Concepts
 ---
 
-In this section we learn Kubedirector concerts.
+In this section we learn KubeDirector concepts.
 
 ## Node
 
