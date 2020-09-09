@@ -3,4 +3,4 @@ id: intro
 title: Introduction
 ---
 
-In this section we learn how to work with Kubedirector from the perspective of a Kubernetes administrator.
+In this section we learn how to interact with Kubedirector.
