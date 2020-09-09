@@ -7,7 +7,7 @@ title: Using KD
 
 We will start by deploying a Ubuntu cluster.  
 
-First we need to reduce the memory of the cluster so that it runs easily in our VM.
+First we need to reduce the memory of the cluster so that it runs easily in our lab VM.
 
 Using the LAB UI file browser, open `deploy/example_clusters/cr-cluster-ubuntu18.04.yaml`
 
