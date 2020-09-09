@@ -55,10 +55,14 @@ Now open a web browser to [http://localhost:3000](http://localhost:3000)
 
 ## Test minikube
 
-In the UI open a new terminal and enter the command `kubectl get pods`.  You should see:
+In the UI open a new terminal:
+
+`Main Menu -> Terminal -> New Terminal`
+
+In the terminal enter the command `kubectl get pods`.  You should see:
 
 ```
-
+No resources found in default namespace.
 ```
 
 ## Shutdown the environment
