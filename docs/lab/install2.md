@@ -37,5 +37,42 @@ vagrant up
 vagrant ssh -c ./run_lab.sh
 ```
 
+:::info Vagrant cannot forward the specified ports on this VM
+If you receive the following error:
+```
+Vagrant cannot forward the specified ports on this VM, since they
+would collide with some other application that is already listening
+on these ports. The forwarded port to 3000 is already in use
+on the host machine.
+```
+This is because you already have a port running on 3000. You can either:
+
+- close the other application, or
+- edit the Vagrantfile to chose a different host port
+:::
+
 Now open a web browser to [http://localhost:3000](http://localhost:3000)
 
+## Test minikube
+
+In the UI open a new terminal and enter the command `kubectl get pods`.  You should see:
+
+```
+
+```
+
+## Shutdown the environment
+
+When you are ready to shutdown the environment inside your host terminal (NOT the terminal in the Lab UI),
+change to the directory where you cloned kubedirector-lab and issue the command:
+
+```
+vagrant suspend
+```
+
+This will suspend the virtual machine.  When you wish to resume again, issue:
+
+```
+vagrant up
+vagrant ssh -c ./run_lab.sh
+```
