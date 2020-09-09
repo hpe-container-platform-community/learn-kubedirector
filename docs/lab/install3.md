@@ -46,3 +46,9 @@ If the deploy was successful, you should see something like this:
 KubeDirector pod name is kubedirector-7f9d95c9d5-gllp2
 ```
 
+At this point, you  can  run ` kubectl get pods` which should show output something like this:
+
+```
+NAME                            READY   STATUS    RESTARTS   AGE
+kubedirector-7f9d95c9d5-gllp2   1/1     Running   0          70m
+```
