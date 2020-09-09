@@ -18,13 +18,18 @@ import myImageUrl from '../../static/img/lab_ui_edit_ubuntu.png';
 <img src={myImageUrl}/>
 
 
-In the Lab Browser UI open a new terminal and run:
+In the Lab Browser UI open a new terminal and run: 
 
 ```
 kubectl create -f deploy/example_clusters/cr-cluster-ubuntu18.04.yaml
 ```
 
-more content coming soon ...
+This should report the following:
 
+```
+kubedirectorcluster.kubedirector.hpe.com/ubuntu18.04 created
+```
 
 ## Inspecting clusters
+
+more content coming soon ...
