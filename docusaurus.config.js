@@ -52,8 +52,16 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'GitHub',
+              label: 'Learn Kubedirector on GitHub',
               href: 'https://github.com/hpe-container-platform-community/learn-kubedirector',
+            },
+            {
+              label: 'Kubedirector Lab on GitHub',
+              href: 'https://github.com/hpe-container-platform-community/kubedirector-lab',
+            },
+            {
+              label: 'Kubedirector on GitHub',
+              href: 'https://github.com/bluek8s/kubedirector',
             },
           ],
         },
