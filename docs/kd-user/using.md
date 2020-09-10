@@ -148,9 +148,12 @@ Warning: Permanently added '[10.0.2.15]:44823' (ECDSA) to the list of known host
 vagrant@10.0.2.15's password:
 ```
 
-Note that we can't login yet because we haven't created a user inside the container.
+:::info no user for ssh
+Note that we can't login yet because we haven't created a ssh user inside the container.
+We will do that next.
+:::
 
-Let's do that now:
+Let's create a user inside the container:
 
 ```
 $ kubectl get pods

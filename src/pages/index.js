@@ -30,7 +30,7 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        A 'lab-in-a-box' is provided making leanring and experimenting with KubeDirector a cinch.
+        A 'lab-in-a-box' is provided making learning and experimenting with KubeDirector a cinch.
       </>
     ),
   },
