@@ -189,7 +189,7 @@ Containers:
 ```
 
 We can see the label `kubedirector.hpe.com/kdcluster=ubuntu18.04`.  
-Our kdcluster ID is `ubuntu18.04` so we know that `kdss-gpdft-0` is our ubuntu18.04 pod.
+Our kdcluster ID (Name) is `ubuntu18.04` so we know that `kdss-gpdft-0` is our ubuntu18.04 pod.
 
 Let's login to the container using kubectl:
 
