@@ -9,12 +9,16 @@ You will need:
  - at least 4GB ram to dedicate to running a Virtual Machine
  - at least 5GB disk space
 
-You should be comfortable with the following concepts:
+You should be comfortable with the following:
 
- - Kubernetes pods, services, ... (TODO: what else?)
- - Kubenetes command line tool `kubectl`
+ - Kubernetes Concepts:
+   - pods
+   - services
+   - storage classes
+   - persistent volumes
+   - persistent volume claims
+ - Kubernetes command line tool `kubectl`
  - Creating Docker images
- - Comfortable working with a Command Line Interface (CLI)
 
 You will need the following software (instructions will be provided):
 

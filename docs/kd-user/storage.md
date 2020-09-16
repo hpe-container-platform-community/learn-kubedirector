@@ -12,13 +12,75 @@ Note that if you are using persistent storage, you may wish to create a [KubeDir
 
 ## Explore default storage
 
-kubectl get storageclass
-kubectl get pv
-kubectl get pvc
+Let's explore how current environment, first `storageclass`:
 
-### Edit deployment YAML
+```
+$ kubectl get storageclass
+NAME                 PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+standard (default)   k8s.io/minikube-hostpath   Delete          Immediate           false                  11d
+```
+
+Next `PersistentVolume`:
+
+```
+$ kubectl get pv
+No resources found
+```
+
+Finally `PersistentVolumeClaim`
+
+```
+$ kubectl get pvc
+No resources found in default namespace.
+```
+
+
+### Deploy a cluster with Storage
+
+We will deploy a ubuntu18.04 cluster with storage.
+
+First we will change the configuration to support our lab environment.
 
 - Edit `deploy/example_clusters/cr-cluster-ubuntu18.04-stor.yaml` 
-  - change both instances of `4GBi` to `1GBi` 
-  - change CPU from `2` to `1`
+  - change both instances of `memory: "4Gi"` to `memory: "1Gi"` 
+  - change both instances of `CPU: "2"` to `CPU: "1"`
+
+Now deploy the cluster:
+
+```
+$ kubectl apply -f deploy/example_clusters/cr-cluster-ubuntu18.04-stor.yaml
+kubedirectorcluster.kubedirector.hpe.com/ubuntu18.04-persistent created
+```
+
+Let's take a look at the PersistentVolumes:
+
+```
+$ kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                    STORAGECLASS   REASON   AGE
+pvc-586fc6ec-6106-40b4-af06-1084b384e23f   40Gi       RWO            Delete           Bound    default/p-kdss-s4cqf-0   standard                4m58s
+```
+
+If we describe the pv created for our Ubuntu 18.04 instance, we can find the storage location:
+
+```
+kubectl describe pv pvc-586fc6ec-6106-40b4-af06-1084b384e23f
+...
+Source:
+    Type:          HostPath (bare host directory volume)
+    Path:          /tmp/hostpath-provisioner/p-kdss-s4cqf-0
+    HostPathType:  
+...
+```
+
+Finally, we can check the host folder:
+
+```
+$ ls -l /tmp/hostpath-provisioner/p-kdss-s4cqf-0/
+total 8
+drwxr-xr-x 69 root root 4096 Sep 16 11:34 etc
+drwxr-xr-x  3 root root   22 Jul 16 11:15 home
+```
+
+We can see that the cluster's `etc` and `home` folders are persistent.
+
 
