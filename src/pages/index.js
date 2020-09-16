@@ -12,7 +12,7 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        KubeDirector is a CNCF project that simplifies iimplementing stateful scaleout application clusters on Kubenetes.
+        KubeDirector is a CNCF project that simplifies implementing stateful scaleout application clusters on Kubenetes.
       </>
     ),
   },
