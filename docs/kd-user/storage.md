@@ -36,7 +36,7 @@ $ kubectl get pvc
 No resources found in default namespace.
 ```
 
-### Deploy a cluster with default storage
+## Deploy a cluster with default storage
 
 We will deploy a ubuntu18.04 cluster with storage.
 
@@ -84,4 +84,60 @@ drwxr-xr-x  3 root root   22 Jul 16 11:15 home
 
 We can see that the cluster's `etc` and `home` folders are persistent.
 
-### Deploy a cluster with custom storage
+## Deploy a cluster with custom storage
+
+> Alternately, you can declare a `storageClassName` in the persistent storage spec section of each virtual cluster spec. 
+
+Here is the spec for `deploy/example_clusters/cr-cluster-ubuntu18.04-stor.yaml`:
+
+```yaml
+apiVersion: "kubedirector.hpe.com/v1beta1"
+kind: "KubeDirectorCluster"
+metadata:
+  name: "ubuntu18.04-persistent"
+spec:
+  app: ubuntu18x
+  roles:
+  - id: vanilla_ubuntu
+    members: 1
+    resources:
+      requests:
+        memory: "1Gi"
+        cpu: "1"
+      limits:
+        memory: "1Gi"
+        cpu: "1"
+    storage:
+      size: "40Gi"
+```
+
+The KubeDirectorCluster [spec](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorCluster-Definition) has a definition for `PersistentStorageSpec`.  Inside that element, are the fields `size` and `storageClassName`.  
+
+It would appear that we can modify  `deploy/example_clusters/cr-cluster-ubuntu18.04-stor.yaml` to add the storageClassName as follows:
+
+```yaml
+apiVersion: "kubedirector.hpe.com/v1beta1"
+kind: "KubeDirectorCluster"
+metadata:
+  name: "ubuntu18.04-persistent"
+spec:
+  app: ubuntu18x
+  roles:
+  - id: vanilla_ubuntu
+    members: 1
+    resources:
+      requests:
+        memory: "1Gi"
+        cpu: "1"
+      limits:
+        memory: "1Gi"
+        cpu: "1"
+    storage:
+      size: "40Gi"
+      storageClassName: "yourStorageClassName"
+```
+
+
+
+
+
