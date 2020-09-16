@@ -234,6 +234,13 @@ $ ssh demouser@10.0.2.15 -p 44823
 demouser@10.0.2.15's password: P@55w0rd12345
 ```
 
----
+You can now exit the SSH session.
 
-more content coming soon ...
+## Delete KD cluster
+
+We are finished with this exercise, so let's delete the cluster:
+
+```
+$ kubectl delete  KubeDirectorCluster ubuntu18.0
+kubedirectorcluster.kubedirector.hpe.com "ubuntu18.04" deleted
+```
