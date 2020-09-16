@@ -12,9 +12,9 @@ Note that if you are using persistent storage, you may wish to create a [KubeDir
 Alternately, you can declare a `storageClassName` in the persistent storage spec section of each virtual cluster spec. If no storage class value is declared in either the KubeDirectorConfig or the virtual cluster, then the K8s default storage class will be used.
 
 
-## Explore default storage
+## Explore lab environment
 
-Let's explore how current environment, first `StorageClasses`:
+Let's explore the lab environment, first `StorageClasses`:
 
 ```
 $ kubectl get storageclass
