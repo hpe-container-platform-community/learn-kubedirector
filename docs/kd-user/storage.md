@@ -14,7 +14,7 @@ Alternately, you can declare a `storageClassName` in the persistent storage spec
 
 ## Explore default storage
 
-Let's explore how current environment, first `storageclass`:
+Let's explore how current environment, first `StorageClasses`:
 
 ```
 $ kubectl get storageclass
@@ -22,22 +22,21 @@ NAME                 PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMOD
 standard (default)   k8s.io/minikube-hostpath   Delete          Immediate           false                  11d
 ```
 
-Next check if that are any `PersistentVolume`s:
+Next check if that are any `PersistentVolumes`:
 
 ```
 $ kubectl get pv
 No resources found
 ```
 
-Finally, check for `PersistentVolumeClaim`s:
+Finally, check for `PersistentVolumeClaims`:
 
 ```
 $ kubectl get pvc
 No resources found in default namespace.
 ```
 
-
-### Deploy a cluster with Storage
+### Deploy a cluster with default storage
 
 We will deploy a ubuntu18.04 cluster with storage.
 
@@ -62,7 +61,7 @@ NAME                                       CAPACITY   ACCESS MODES   RECLAIM POL
 pvc-586fc6ec-6106-40b4-af06-1084b384e23f   40Gi       RWO            Delete           Bound    default/p-kdss-s4cqf-0   standard                4m58s
 ```
 
-If we describe the pv created for our Ubuntu 18.04 instance, we can find the storage location:
+If we `describe` the pv created for our Ubuntu 18.04 instance, we can find the storage location:
 
 ```
 kubectl describe pv pvc-586fc6ec-6106-40b4-af06-1084b384e23f
@@ -74,7 +73,7 @@ Source:
 ...
 ```
 
-Finally, we can check the host folder:
+Finally, we can check the host folder contents:
 
 ```
 $ ls -l /tmp/hostpath-provisioner/p-kdss-s4cqf-0/
@@ -85,4 +84,4 @@ drwxr-xr-x  3 root root   22 Jul 16 11:15 home
 
 We can see that the cluster's `etc` and `home` folders are persistent.
 
-
+### Deploy a cluster with custom storage
