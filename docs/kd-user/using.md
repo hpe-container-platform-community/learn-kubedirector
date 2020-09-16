@@ -191,6 +191,16 @@ Containers:
 We can see the label `kubedirector.hpe.com/kdcluster=ubuntu18.04`.  
 Our kdcluster ID (Name) is `ubuntu18.04` so we know that `kdss-gpdft-0` is our ubuntu18.04 pod.
 
+
+:::info find pod directly
+As a shortcut in the future, we can find the pod for our kdcluster by name using:
+
+```
+$ kubectl get pods -l kubedirector.hpe.com/kdcluster=ubuntu18.04
+```
+:::
+
+
 Let's login to the container using kubectl:
 
 ```
@@ -198,7 +208,29 @@ $ kubectl exec -it kdss-gpdft-0 -- /bin/bash
 root@kdss-gpdft-0:/# 
 ```
 
-TODO ... describe how to change the password
+Let's create a user account:
+
+```
+root@kdss-gpdft-0:/# useradd demouser
+root@kdss-gpdft-0:/# passwd demouser
+Current Kerberos password: <Just press Enter key>
+New password: P@55w0rd12345
+Retype new password: P@55w0rd12345
+...
+You can now choose the new password or passphrase.
+<Output truncated for brevity>
+...
+New password: P@55w0rd12345
+Retype new password: P@55w0rd12345
+Current Kerberos password: <Just press Enter key>
+```
+
+We can now exit the `kubectl exec` session, and ssh in as the `demouser`:
+
+```
+$ ssh demouser@10.0.2.15 -p 44823
+demouser@10.0.2.15's password: P@55w0rd12345
+```
 
 ---
 
