@@ -3,9 +3,11 @@ id: advanced
 title: Advanced Usage
 ---
 
-## Change spec of virtual machine
+This section is optional.
 
-You can upload the cpus and memory allocated to your VM by providing extra configuration in your Vagrantfile:
+## Change VM CPU and Memory
+
+You can change the cpus and memory allocated to your VM by providing extra configuration in your Vagrantfile:
 
 ```ruby
 config.vm.provider "virtualbox" do |v|
