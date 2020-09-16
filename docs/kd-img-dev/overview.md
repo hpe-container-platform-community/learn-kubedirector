@@ -9,7 +9,7 @@ We will work with the `ubuntu18.04` KD application that we have used in the prev
 
 ## Basic tutorial
 
-Previously we [deployed a Ubuntu Cluster](/kd-user/storage#deploy-a-cluster-with-default-storage) and found that the directories `/home` and `/etc` were persisted.
+Previously we [deployed a Ubuntu Cluster](/kd-user/storage) and found that the directories `/home` and `/etc` were persisted.
 
 In this section, we are going to modify the persisted directories.   
 
