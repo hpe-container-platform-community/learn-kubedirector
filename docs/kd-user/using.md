@@ -3,7 +3,7 @@ id: using
 title: Using KD
 ---
 
-## Deploying clusters
+## Deploying KD clusters
 
 We will start by deploying a Ubuntu cluster.  
 
@@ -30,7 +30,7 @@ This should report the following:
 kubedirectorcluster.kubedirector.hpe.com/ubuntu18.04 created
 ```
 
-## Listing KubeDirector clusters
+## Listing KD clusters
 
 We can run the following to list the KubeDirector clusters:
 
@@ -45,7 +45,7 @@ NAME          AGE
 ubuntu18.04   0m
 ```
 
-## View KubeDirector cluster details
+## View KD cluster details
 
 We can retrieve the cluster details using the kubectl describe command.
 For example:
@@ -110,7 +110,7 @@ Status:
 Events:                              <none>
 ```
 
-## View KubeDirector cluster services
+## View KD cluster services
 
 You can query the KubeDirector cluster services with the following:  `kubectl get services -l kubedirector.hpe.com/kdcluster=CLUSTERNAME`
 
@@ -198,6 +198,8 @@ As a shortcut in the future, we can find the pod for our kdcluster by name using
 ```
 $ kubectl get pods -l kubedirector.hpe.com/kdcluster=ubuntu18.04
 ```
+
+Here we specify the name of our kdcluster: `ubuntu18.04`
 :::
 
 
