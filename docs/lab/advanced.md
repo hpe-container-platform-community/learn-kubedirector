@@ -3,19 +3,18 @@ id: advanced
 title: Advanced Usage
 ---
 
-
 ## Change spec of virtual machine
 
 You can upload the cpus and memory allocated to your VM by providing extra configuration in your Vagrantfile:
 
 ```ruby
-  config.vm.provider "virtualbox" do |v|
-    v.memory = 4096
-    v.cpus = 4
-  end
+config.vm.provider "virtualbox" do |v|
+  v.memory = 4096
+  v.cpus = 4
+end
 ```
 
-For example:
+For example, here I am specifying 4096 memory and 4 vcpus.
 
 ```ruby
 # -*- mode: ruby -*-
@@ -45,3 +44,6 @@ end
 
 Run `vagrant reload` for changes in the Vagrantfile to take effect.
 
+## Reference
+
+See  https://www.vagrantup.com/docs/providers/virtualbox/configuration
