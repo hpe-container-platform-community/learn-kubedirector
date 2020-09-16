@@ -24,7 +24,7 @@ $ kubectl create -f deploy/example_configs/cr-config-onprem.yaml
 kubedirectorconfig.kubedirector.hpe.com/kd-global-config created
 ```
 
-```
+```bash
 $ kubectl get KubeDirectorConfig
 NAME               AGE
 kd-global-config   4s
@@ -32,6 +32,11 @@ kd-global-config   4s
 
 ```
 $ kubectl describe KubeDirectorConfig
+```
+
+Which outputs:
+
+```yaml
 Name:         kd-global-config
 Namespace:    default
 Labels:       <none>

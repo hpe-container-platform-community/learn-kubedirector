@@ -118,7 +118,12 @@ $ ls /tmp/hostpath-provisioner/p-kdss-qtl4d-0
 etc  home  var
 ```
 
-In this lesson we have seen how we can modify 
+In this lesson we have seen how `defaultPersistDirs` works. 
+
+See the full `KubeDirectorApp` definitions here:
+
+ - [KubeDirectorApp definition](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition)
+ - [KubeDirectorApp spec definition](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#kubedirectorappspec)
 
 ---
 
