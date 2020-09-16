@@ -19,3 +19,65 @@ Another common reason you may wish to change the KubeDirector configuration is i
 
 If you have created a KubeDirectorConfig object and later want to change it, you can edit the config file and use `kubectl apply` to apply the changes. Keep in mind that the values specified in this config are only referenced at the time a virtual cluster is created; changing this config will not retroactively affect any existing virtual clusters.
 
+```
+$ kubectl create -f deploy/example_configs/cr-config-onprem.yaml
+kubedirectorconfig.kubedirector.hpe.com/kd-global-config created
+```
+
+```
+$ kubectl get KubeDirectorConfig
+NAME               AGE
+kd-global-config   4s
+```
+
+```
+$ kubectl describe KubeDirectorConfig
+Name:         kd-global-config
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+API Version:  kubedirector.hpe.com/v1beta1
+Kind:         KubeDirectorConfig
+Metadata:
+  Creation Timestamp:  2020-09-16T09:51:23Z
+  Finalizers:
+    kubedirector.hpe.com/cleanup
+  Generation:  1
+  Managed Fields:
+    API Version:  kubedirector.hpe.com/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:spec:
+        .:
+        f:clusterSvcDomainBase:
+        f:defaultServiceType:
+        f:nativeSystemdSupport:
+    Manager:      kubectl-create
+    Operation:    Update
+    Time:         2020-09-16T09:51:23Z
+    API Version:  kubedirector.hpe.com/v1beta1
+    Fields Type:  FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .:
+          v:"kubedirector.hpe.com/cleanup":
+    Manager:         kubedirector
+    Operation:       Update
+    Time:            2020-09-16T09:51:23Z
+  Resource Version:  166394
+  Self Link:         /apis/kubedirector.hpe.com/v1beta1/namespaces/default/kubedirectorconfigs/kd-global-config
+  UID:               afbc6283-b192-4913-813f-32f411a9317f
+Spec:
+  Cluster Svc Domain Base:  .svc.cluster.local
+  Default Service Type:     NodePort
+  Native Systemd Support:   true
+Status:
+  Generation UID:  e181ecff-b75f-4c35-9d1e-86d7e7eac368
+  State:           ready
+Events:
+  Type    Reason  Age   From          Message
+  ----    ------  ----  ----          -------
+  Normal  Config  49s   kubedirector  new
+  Normal  Config  49s   kubedirector  stable
+```

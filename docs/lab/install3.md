@@ -25,10 +25,16 @@ done
 
 ## Deploy KubeDirector
 
-In the Lab Browser UI terminal, enter the command `make deploy`.
+In the Lab Browser UI terminal, enter the command:
+
+```
+$ make deploy
+```
 
 :::info deploy errors
-It is likely that you will see an error on the first attempt, such as:
+
+If you receive an error with `make deploy` such as:
+
 ```
 ...
 * Waiting for KubeDirector to start.......................
@@ -36,10 +42,41 @@ KubeDirector failed to start -- no admission control hook created!
 make: *** [deploy] Error 1
 ```
 
-Enter the command `make redeploy`.  You may need to do this a few times.
+Verify that the kubedirector pod is running:
+
+```
+$ kubectl get pods
+NAME                            READY   STATUS              RESTARTS   AGE
+kubedirector-7f9d95c9d5-j8rh4   0/1     ContainerCreating   0          90s
+```
+
+You can see that mine is still creating, so I run `kubectl describe` to inspect status:
+
+```
+$ kubectl describe pod kubedirector-7f9d95c9d5-j8rh4 
+...
+Events:
+  Type    Reason     Age    From                            Message
+  ----    ------     ----   ----                            -------
+  Normal  Scheduled  3m1s   default-scheduler               Successfully assigned default/kubedirector-7f9d95c9d5-j8rh4 to localhost.localdomain
+  Normal  Pulling    2m59s  kubelet, localhost.localdomain  Pulling image "bluek8s/kubedirector:unstable"
+```
+
+Deploy failed for me because the image pull was talking a long time.
+
+I checked a few more times with `kubectl describe` until I saw:
+
+```
+Normal  Started    37s   kubelet, localhost.localdomain  Started container kubedirector
+```
+
+At which point I could run `make redeploy` which completed successfully.
+
 :::
 
-If the deploy was successful, you should see something like this:
+
+
+When `make deploy` is successful, you should see something like this:
 
 ```
 ...
