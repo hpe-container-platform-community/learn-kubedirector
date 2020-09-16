@@ -9,7 +9,9 @@ We will work with the `ubuntu18.04` KD application that we have used in the prev
 
 ## Basic tutorial
 
-In this section, we are going to 
+Previously we [deployed a Ubuntu Cluster](kd-user/storage#deploy-a-cluster-with-default-storage) and found that the directories `/home` and `/etc` were persisted.
+
+In this section, we are going to modify the persisted directories.   
 
 Open the file `deploy/example_catalog/cr-app-ubuntu18.04.json` and add `/var` to `defaultPersistDirs`.
 
