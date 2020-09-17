@@ -5,15 +5,33 @@ title: Default Persistence Directories
 
 ## Modify Ubuntu 18.04 'defaultPersistDirs'
 
-Previously we [deployed a Ubuntu Cluster with default storage](/docs/kd-user/storage#deploy-a-cluster-with-default-storage) and found that the directories `/home` and `/etc` were persisted.
+In a [previous lesson](/docs/kd-user/storage#deploy-a-cluster-with-default-storage) we deployed a Ubuntu Cluster with default storage and found that the directories `/home` and `/etc` were persisted.
 
-In this section, we are going to modify the persisted directories.   
+In this section, we are going to modify the persisted directories.  Open the file `deploy/example_catalog/cr-app-ubuntu18.04.json`.
 
-Open the file `deploy/example_catalog/cr-app-ubuntu18.04.json` and add `/var` to `defaultPersistDirs` inside `spec`.
+Currently, it is set to this:
 
-The full yaml should now look like this:
+```json
+{ 
+    ...
+    "defaultPersistDirs" : ["/home"],
+    ...
+}
+```
 
-```yaml
+We will change it to:
+
+```json
+{ 
+    ...
+    "defaultPersistDirs" : ["/home", "/var"],
+    ...
+}
+```
+
+The full json should now look like this:
+
+```json
 {
     "apiVersion": "kubedirector.hpe.com/v1beta1",
     "kind": "KubeDirectorApp",
