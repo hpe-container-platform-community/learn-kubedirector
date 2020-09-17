@@ -1,6 +1,6 @@
 ---
-id: modify_image 
-title: Modify Docker Image
+id: customdockerimage 
+title: Custom Docker Images
 ---
 
 ---
@@ -13,7 +13,9 @@ In this section, we will modify the docker image for the Ubuntu 18.04 applicatio
 
 ## Modify Docker Image
 
-In this section, we modify the application image `defaultImageRepoTag`.  In the Ubuntu 18.04 image, it is set to `"defaultImageRepoTag": "bluedata/ubuntu18.04:1.1"`
+In this section, we modify the Ubuntu 18.04 application image `defaultImageRepoTag` so that we can provide a custom image. 
+
+Currently this is `"defaultImageRepoTag": "bluedata/ubuntu18.04:1.1"`
 
 Create a new folder under `./deploy/example ...`
 
@@ -28,6 +30,8 @@ RUN touch /modified_by_yourname
 Change `yourname` to your name without spaces or special characters
 
 ```
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
 docker build --tag myubuntu:1.0 .
 
 docker tag myubuntu:1.0 localhost:5000/myubuntu:1.0

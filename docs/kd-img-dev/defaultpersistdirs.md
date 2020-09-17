@@ -1,6 +1,6 @@
 ---
-id: modify_defaultpersistdirs 
-title: Modify existing application
+id: defaultpersistdirs 
+title: Default Persistence Directories 
 ---
 
 ## Modify Ubuntu 18.04 'defaultPersistDirs'
