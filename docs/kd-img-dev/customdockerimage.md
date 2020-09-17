@@ -13,6 +13,63 @@ Currently `defaultImageRepoTag` is set to `bluedata/ubuntu18.04:1.1`
 
 Change `defaultImageRepoTag` to `localhost:5000/myubuntu:1.0` (we will create this image in the steps below).
 
+The full json should now look like this:
+
+```json
+{
+    "apiVersion": "kubedirector.hpe.com/v1beta1",
+    "kind": "KubeDirectorApp",
+    "metadata": {
+        "name" : "ubuntu18x"
+    },
+
+    "spec" : {
+        "systemdRequired": true,
+        "defaultPersistDirs" : ["/home", "/var"],
+        "config": {
+            "roleServices": [
+                {
+                    "serviceIDs": [
+                        "ssh"
+                    ],
+                    "roleID": "vanilla_ubuntu"
+                }
+            ],
+            "selectedRoles": [
+                "vanilla_ubuntu"
+            ]
+        },
+        "label": {
+            "name": "Ubuntu 18.04",
+            "description": "Ubuntu 18.04 with no preinstalled apps"
+        },
+        "distroID": "bluedata/ubuntu18x",
+        "version": "1.1",
+        "configSchemaVersion": 8,
+        "services": [
+            {
+                "endpoint": {
+                    "port": 22,
+                    "isDashboard": false
+                },
+                "id": "ssh",
+                "label": {
+                    "name": "SSH"
+                }
+            }
+        ],
+        "defaultImageRepoTag": "localhost:5000/myubuntu:1.0",
+        "defaultConfigPackage": null,
+        "roles": [
+            {
+                "cardinality": "1+",
+                "id": "vanilla_ubuntu"
+            }
+        ]
+    }
+}
+```
+
 ### Create Dockerfile
 
 We will create a Dockerfile, so let's create a new folder for it inside `deploy/example_catalog/` called `myubuntu`:
