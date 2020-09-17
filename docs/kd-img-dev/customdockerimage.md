@@ -3,12 +3,6 @@ id: customdockerimage
 title: Custom Docker Images
 ---
 
----
-
-This page is a work-in-progress!
-
----
-
 In this section, we will modify the docker image for the Ubuntu 18.04 application image.
 
 ## Modify Docker Image

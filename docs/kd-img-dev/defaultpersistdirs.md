@@ -7,9 +7,11 @@ title: Default Persistence Directories
 
 In a [previous lesson](/docs/kd-user/storage#deploy-a-cluster-with-default-storage) we deployed a Ubuntu Cluster with default storage and found that the directories `/home` and `/etc` were persisted.
 
-In this section, we are going to modify the persisted directories.  Open the file `deploy/example_catalog/cr-app-ubuntu18.04.json`.
+In this section, we are going to modify the persisted directories (`defaultPersistDirs`).  
 
-Currently, it is set to this:
+Open the file `deploy/example_catalog/cr-app-ubuntu18.04.json`.
+
+Currently, `defaultPersistDirs` is set to:
 
 ```json
 { 
@@ -19,7 +21,7 @@ Currently, it is set to this:
 }
 ```
 
-We will change it to:
+Change it to:
 
 ```json
 { 
@@ -88,28 +90,28 @@ The full json should now look like this:
 
 We need to delete the old `cr-app-ubuntu18.04.json` application definition from our Kubernetes environment:
 
-```
+```bash
 $ kubectl delete -f deploy/example_catalog/cr-app-ubuntu18.04.json 
 kubedirectorapp.kubedirector.hpe.com "ubuntu18x" deleted
 ```
 
 We can now deploy our updated application definition:
 
-```
+```bash
 $ kubectl create -f deploy/example_catalog/cr-app-ubuntu18.04.json 
 kubedirectorapp.kubedirector.hpe.com/ubuntu18x created
 ```
 
 Next, deploy a cluster:
 
-```
+```bash
 $ kubectl create -f deploy/example_clusters/cr-cluster-ubuntu18.04-stor.yaml 
 kubedirectorcluster.kubedirector.hpe.com/ubuntu18.04-persistent created
 ```
 
 We want to check that `/vars` is now persisted, let's find the `PersistentVolume` for our ubuntu virtual cluster:
 
-```
+```bash
 $ kubectl get pv
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS     CLAIM                    STORAGECLASS   REASON   AGE
 pvc-df7da24a-e609-4e32-b574-db579fbb0cda   40Gi       RWO            Delete           Bound      default/p-kdss-qtl4d-0   standard                20s
@@ -117,7 +119,7 @@ pvc-df7da24a-e609-4e32-b574-db579fbb0cda   40Gi       RWO            Delete     
 
 We can use `describe pv` to find the storage location:
 
-```
+```bash
 $ kubectl describe pv pvc-df7da24a-e609-4e32-b574-db579fbb0cda
 ...
 Source:
@@ -129,14 +131,17 @@ Source:
 
 Finally, we can use ls to check what folders are persisted:
 
-```
+```bash
 $ ls /tmp/hostpath-provisioner/p-kdss-qtl4d-0
 etc  home  var
 ```
 
-In this lesson we saw how `defaultPersistDirs` works. 
-
 ## Reference information
 
-You can find the complete `KubeDirectorApp` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition) and the `KubeDirectorApp.spec` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#kubedirectorappspec).
+In this lesson we saw how `defaultPersistDirs` works. 
+
+You can find the:
+
+ - `KubeDirectorApp.spec` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#kubedirectorappspec)
+ - overall `KubeDirectorApp` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition)
 

@@ -5,7 +5,7 @@ title: Advanced Usage
 
 This section is optional.
 
-## Change VM CPU and Memory
+## Change VM CPU or Memory
 
 You can change the cpus and memory allocated to your VM by providing extra configuration in your Vagrantfile:
 
