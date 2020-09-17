@@ -106,5 +106,13 @@ bin  boot  dev  etc  home  lib  lib64  media  mnt  modified_by_yourname  opt  pr
 
 ## Reference information
 
-You can find the complete `KubeDirectorApp` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition) and the `KubeDirectorApp.spec` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#kubedirectorappspec).
+In this lesson we saw how `defaultImageRepoTag` works. 
 
+You can find the:
+
+ - `KubeDirectorApp` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition)
+ - `KubeDirectorApp.spec` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#kubedirectorappspec)
+ 
+If a KD Application has multiple roles (covered later), you can specify the `imageRepoTag` for each role:
+
+- `KubeDirectorApp.role` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#role)
