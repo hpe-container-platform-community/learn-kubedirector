@@ -1,7 +1,9 @@
 ---
-id: firststeps 
-title: First Steps
+id: modify_defaultpersistdirs 
+title: Modify existing application
 ---
+
+## Modify Ubuntu 18.04 'defaultPersistDirs'
 
 Previously we [deployed a Ubuntu Cluster with default storage](/docs/kd-user/storage#deploy-a-cluster-with-default-storage) and found that the directories `/home` and `/etc` were persisted.
 
@@ -116,7 +118,7 @@ etc  home  var
 
 In this lesson we saw how `defaultPersistDirs` works. 
 
----
+## Reference information
 
 You can find the complete `KubeDirectorApp` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition) and the `KubeDirectorApp.spec` definition [here](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#kubedirectorappspec).
 
