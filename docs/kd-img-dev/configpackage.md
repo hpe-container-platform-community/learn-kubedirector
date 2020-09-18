@@ -73,7 +73,7 @@ This script is executed by KubeDirector.  It is executed for events in a KubeDir
  - `--addnodes` when an node is added to the virtual cluster
  - `--delnodes` when a node is removed from the virtual cluster
  
-## Create a basic `configpackage`
+## Create a basic config package
 
 In this section we modify the ubuntu application to log the action inside the container.
 
