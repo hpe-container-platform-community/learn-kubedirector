@@ -136,7 +136,7 @@ $ ls /tmp/hostpath-provisioner/p-kdss-qtl4d-0
 etc  home  var
 ```
 
-## Why was `etc` persisted?
+## Why was `/etc` persisted?
 
 > KubeDirector will persist `/etc` if you don't have an app config package in your app definition. 
 > It will persist `/etc`, `/opt` and `/usr` only if app config is defined.
