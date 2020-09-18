@@ -7,7 +7,7 @@ title: Config Package
 
 To learn about config package, let's explore an application that has `defaultConfigPackage` defined.
 
-Open the file: `deploy/example_catalog/cr-app-spark245.json` inside this file we see:
+Open the file: `deploy/example_catalog/cr-app-kafka55.json` inside this file we see:
 
 ```json
 {   ...
