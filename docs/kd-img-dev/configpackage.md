@@ -3,7 +3,7 @@ id: configpackage
 title: Config Package
 ---
 
-## Explore existing config package
+## Explore an existing config package
 
 To learn about config package, let's explore an application that has `defaultConfigPackage` defined.
 
@@ -77,7 +77,21 @@ This script is executed by KubeDirector.  It is executed for events in a KubeDir
 
 In this section we modify the ubuntu application to log the action inside the container.
 
-More content coming soon ...
+In the folder you created for the [previous lession](/docs/kd-img-dev/customdockerimage) - `/deploy/example_catalog/myubuntu` 
+create a new file named `startscript` with the contents:
+
+```bash
+#!/bin/env bash
+### Error for wrong option handled ###
+if [[ "$1" == "--addnodes" ]] || [[ "$1" == "--delnodes" ]] || [[ "$1" == "--configure" ]]; then
+  echo "Valid values. So execute the later code"
+else
+  echo "ERROR: Unknown command line option(s): '$@'"
+  exit 10
+fi
+
+echo "$1" >> /root/startscript.log
+```
 
 
 ## Reference
