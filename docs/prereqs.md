@@ -18,7 +18,8 @@ You should be comfortable with the following:
    - persistent volumes
    - persistent volume claims
  - Kubernetes command line tool `kubectl`
- - Creating Docker images
+ - Creating basic Docker images
+ - Basic Python
 
 You will need the following software (instructions will be provided):
 

@@ -96,7 +96,7 @@ To make development easier, we will deploy a local registry to push our custom i
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ```
 
-### Push image
+### Build and Push image
 
 In the terminal, change to the `myubuntu` folder and build your custom image and push it to the local registry:
 
@@ -104,13 +104,17 @@ In the terminal, change to the `myubuntu` folder and build your custom image and
 docker build --tag myubuntu:1.0 .
 
 docker tag myubuntu:1.0 localhost:5000/myubuntu:1.0
+```
 
+Next we push the image to our local registry:
+
+```bash
 docker push localhost:5000/myubuntu:1.0
 ```
 
 ### Deploy the KD app image
 
-First ensure you aren't running any existing Ubuntu KD clusters:
+First ensure you aren't still running an Ubuntu KD clusters from the previous tutorial.
 
 ```bash
 kubectl delete -f ../../example_clusters/cr-cluster-ubuntu18.04-stor.yaml
