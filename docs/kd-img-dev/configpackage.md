@@ -155,6 +155,15 @@ Ensure `defaultConfigPackage` in the file `deploy/example_catalog/cr-app-ubuntu1
 }
 ```
 
+and `defaultImageRepoTag` is:
+
+```json
+{
+    ...
+    "defaultImageRepoTag": "localhost:5000/myubuntu:1.0"
+    ...
+}
+
 ## Deploy the KD app image
 
 First ensure you aren't still running an Ubuntu KD clusters from the previous tutorial.
@@ -208,12 +217,12 @@ kdss-kzbwq-0                    1/1     Running   0          105s
 kubedirector-7f9d95c9d5-wjm2j   1/1     Running   0          47h
 ```
 
-We can then run `ls /` inside the cluster to see the file we created in our Docker image `modified_by_yourname`:
+Let's check the log file:
 
 ```bash
 $ kubectl exec -it kdss-kzbwq-0 -- /bin/bash
 root@kdss-w6jj7-0:/# ls /
-bin  boot  dev  etc  home  lib  lib64  media  mnt  modified_by_yourname  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
 ```
 
 
