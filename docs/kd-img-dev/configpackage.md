@@ -201,7 +201,7 @@ kubectl apply -f ../../example_clusters/cr-cluster-ubuntu18.04-stor.yaml
 
 You should see a new pod:
 
-``bash
+```bash
 $ kubectl get pods
 NAME                            READY   STATUS    RESTARTS   AGE
 kdss-kzbwq-0                    1/1     Running   0          105s
