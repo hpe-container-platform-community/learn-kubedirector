@@ -138,12 +138,12 @@ etc  home  var
 
 ## Why was `/etc` persisted?
 
-> KubeDirector will persist `/etc` if you don't have an app config package in your app definition. 
+> KubeDirector will persist `/etc` if you don't have an app config package in your app definition.<br/>
 > It will persist `/etc`, `/opt` and `/usr` only if app config is defined.
+>
+> _See [here](https://github.com/bluek8s/kubedirector/issues/410) for more info._
 
-See [here](https://github.com/bluek8s/kubedirector/issues/410) for more info.
-
-We will explore app config is [this lesson](/docs/kd-img-dev/configpackage).
+We will explore app config in [this lesson](/docs/kd-img-dev/configpackage).
 
 ## Reference information
 
