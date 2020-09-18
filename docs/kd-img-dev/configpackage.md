@@ -98,6 +98,7 @@ Open a terminal and change into the folder `/deploy/example_catalog/myubuntu`.
 Create a tar file with the appconfig:
 
 ```bash
+chmod +x appconfig/startscript
 tar cvzf appconfig.tgz appconfig/
 ```
 
