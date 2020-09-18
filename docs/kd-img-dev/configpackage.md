@@ -90,7 +90,7 @@ else
   exit 10
 fi
 
-echo "$1" >> /root/startscript.log
+echo "Starting configuration with option '$1' on node"
 ```
 
 Open a terminal and change into the folder `/deploy/example_catalog/myubuntu`.
@@ -185,7 +185,7 @@ Deploy the new Ubuntu KD application with your changes:
 kubectl apply -f ../cr-app-ubuntu18.04.json
 ```
 
-Check the deployement was successful:
+Check the deployment was successful:
 
 ```bash
 kubectl get kubedirectorapps.kubedirector.hpe.com
@@ -207,6 +207,25 @@ Next we can deploy the KD Cluster:
 
 ```bash
 kubectl apply -f ../../example_clusters/cr-cluster-ubuntu18.04-stor.yaml
+```
+
+```bash
+kubectl describe kubedirectorclusters.kubedirector.hpe.com ubuntu18.04-persistent
+```
+
+You may need to run the above command several times until the Cluster is `stable`:
+
+```
+Events:
+  Type    Reason   Age                From          Message
+  ----    ------   ----               ----          -------
+  Normal  Cluster  31s                kubedirector  new
+  Normal  Role     31s                kubedirector  creating role{vanilla_ubuntu}
+  Normal  Role     31s                kubedirector  changing replicas count for role{vanilla_ubuntu}: 0 -> 1
+  Normal  Role     31s (x3 over 31s)  kubedirector  waiting for replicas count for role{vanilla_ubuntu}: 0 -> 1
+  Normal  Member   1s                 kubedirector  initial config skipped for member{kdss-4p8kt-0} in role{vanilla_ubuntu}
+  Normal  Role     1s                 kubedirector  notify skipped for members in role{vanilla_ubuntu}
+  Normal  Cluster  1s                 kubedirector  stable
 ```
 
 You should see a new pod:
