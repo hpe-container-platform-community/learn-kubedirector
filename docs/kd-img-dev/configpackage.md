@@ -163,6 +163,7 @@ and `defaultImageRepoTag` is:
     "defaultImageRepoTag": "localhost:5000/myubuntu:1.0"
     ...
 }
+```
 
 ## Deploy the KD app image
 
