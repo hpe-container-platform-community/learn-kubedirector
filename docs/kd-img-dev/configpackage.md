@@ -3,7 +3,7 @@ id: configpackage
 title: Config Package
 ---
 
-## Explore existing config package
+## Explore an existing config package
 
 To learn about config package, let's explore an application that has `defaultConfigPackage` defined.
 
