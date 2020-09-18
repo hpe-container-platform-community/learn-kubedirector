@@ -20,6 +20,7 @@ You should be comfortable with the following:
  - Kubernetes command line tool `kubectl`
  - Creating basic Docker images
  - Basic Python
+ - Basic Bash
 
 You will need the following software (instructions will be provided):
 

@@ -72,7 +72,7 @@ The full json should now look like this:
 
 ### Create Dockerfile
 
-We will create a Dockerfile, so let's create a new folder for it inside `deploy/example_catalog/` called `myubuntu`:
+We need to create a `Dockerfile` - let's create a **new folder** for it inside `deploy/example_catalog/` called `myubuntu`:
 
 import myImageUrl from '../../static/img/new_folder.png';
 
