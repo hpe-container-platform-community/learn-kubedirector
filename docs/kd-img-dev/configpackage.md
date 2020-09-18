@@ -111,7 +111,7 @@ RUN ! test -d /opt/configscripts || mkdir /opt/configscripts/
 COPY appconfig.tgz /opt/configscripts/
 ```
 
-### Run a local registry
+## Run a local registry
 
 Check local docker registry is running:
 
@@ -125,7 +125,7 @@ If it is not running, start it with:
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ```
 
-### Build and Push image
+## Build and Push image
 
 In the terminal, change to the `myubuntu` folder and build your custom image and push it to the local registry:
 
@@ -141,7 +141,7 @@ Next we push the image to our local registry:
 docker push localhost:5000/myubuntu:1.0
 ```
 
-### Update the KD app image
+## Update the KD app image
 
 Ensure `defaultConfigPackage` in the file `deploy/example_catalog/cr-app-ubuntu18.04.json` is set to:
 
@@ -155,7 +155,7 @@ Ensure `defaultConfigPackage` in the file `deploy/example_catalog/cr-app-ubuntu1
 }
 ```
 
-### Deploy the KD app image
+## Deploy the KD app image
 
 First ensure you aren't still running an Ubuntu KD clusters from the previous tutorial.
 
@@ -191,7 +191,7 @@ training-engine          18h
 ubuntu18x                5s
 ```
 
-### Deploy the KD Cluster
+## Deploy the KD Cluster
 
 Next we can deploy the KD Cluster:
 
