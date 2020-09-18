@@ -69,9 +69,9 @@ are passed to the script are passed in the variables `$1`, `$2`, etc.
 
 This script is executed by KubeDirector.  It is executed for events in a KubeDirector virtual cluster lifecycle, e.g.
 
- - `--configure` when an virtual cluster is initially created (TODO is this correct?)
- - `--addnodes` when an node is added to the virtual cluster
- - `--delnodes` when a node is removed from the virtual cluster
+ - At launch time all pods get `startscript --configure` event. 
+ - During expansion existing pods get `startscript --addnodes` ... and new pods get `startscript --configure`. 
+ - For shrinking all nodes get `startscript --delnodes`
  
 ## Create a basic config package
 
