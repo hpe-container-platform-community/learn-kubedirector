@@ -69,9 +69,11 @@ are passed to the script are passed in the variables `$1`, `$2`, etc.
 
 This script is executed by KubeDirector.  It is executed for events in a KubeDirector virtual cluster lifecycle, e.g.
 
- - At launch time all pods get `startscript --configure` event. 
- - During expansion existing pods get `startscript --addnodes` ... and new pods get `startscript --configure`. 
- - For shrinking all nodes get `startscript --delnodes`
+ - At launch time all pods get `startscript --configure` event
+ - During expansion:
+   - existing pods get `startscript --addnodes`
+   - new pods get `startscript --configure`
+ - For shrinking, all nodes get `startscript --delnodes`
  
 ## Create a basic config package
 
