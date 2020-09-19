@@ -241,13 +241,9 @@ kubedirector-7f9d95c9d5-wjm2j   1/1     Running   0          47h
 More content coming soon ...
 
 
-
 ## Reference
 
 More content coming soon ...
 
 ---
-
-More content coming soon ...
-
 Waiting for information here: https://github.com/bluek8s/kubedirector/issues/412
