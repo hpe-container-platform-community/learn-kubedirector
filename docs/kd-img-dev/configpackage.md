@@ -173,13 +173,13 @@ and `defaultImageRepoTag` is:
 First ensure you aren't still running an Ubuntu KD clusters from the previous tutorial.
 
 ```bash
-kubectl delete -f ../../example_clusters/cr-cluster-ubuntu18.04-stor.yaml
+kubectl delete kubedirectorclusters.kubedirector.hpe.com ubuntu18.04-persistent
 ```
 
 Next undeploy the existing Ubuntu KD application image definition:
 
 ```bash
-kubectl delete -f ../cr-app-ubuntu18.04.json
+kubectl delete kubedirectorapps.kubedirector.hpe.com ubuntu18x
 ```
 
 Deploy the new Ubuntu KD application with your changes:
