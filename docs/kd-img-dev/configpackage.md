@@ -238,13 +238,8 @@ kdss-kzbwq-0                    1/1     Running   0          105s
 kubedirector-7f9d95c9d5-wjm2j   1/1     Running   0          47h
 ```
 
-Let's check the log file:
+More content coming soon ...
 
-```bash
-$ kubectl exec -it kdss-kzbwq-0 -- /bin/bash
-root@kdss-w6jj7-0:/# ls /
-
-```
 
 
 ## Reference
