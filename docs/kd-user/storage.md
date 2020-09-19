@@ -86,7 +86,7 @@ We can see that the cluster's `etc` and `home` folders are persistent.
 
 ## Deploy a cluster with custom storage
 
-> Alternately, you can declare a `storageClassName` in the persistent storage spec section of each virtual cluster spec. 
+> You can declare a `storageClassName` in the persistent storage spec section of each virtual cluster spec. 
 
 Here is the spec for `deploy/example_clusters/cr-cluster-ubuntu18.04-stor.yaml`:
 
