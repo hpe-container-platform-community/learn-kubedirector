@@ -85,7 +85,7 @@ doesn't support appconfig at the moment.
 See [here](https://github.com/bluek8s/kubedirector/issues/417) for more info.
 :::
 
-In the folder you created for the [previous lession](/docs/kd-img-dev/customdockerimage) - `/deploy/example_catalog/mycentos` 
+Create a directory `/deploy/example_catalog/mycentos`.  Inside that directory, 
 create another directory `appconfig` and inside that folder, create a new file named `startscript` with the contents:
 
 ```bash
