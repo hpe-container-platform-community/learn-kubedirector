@@ -38,6 +38,20 @@ We can run the following to list the KubeDirector clusters:
 kubectl get KubeDirectorCluster
 ```
 
+:::info Use your TAB!
+
+kubectl has been set up to have TAB completion - use it!
+TAB completion will save you a lot of typing. For example:
+
+```
+kubectl get k<<TAB>>
+kubectl get kubedirector<<TAB>><<TAB>>
+kubedirectorapps.kubedirector.hpe.com      kubedirectorclusters.kubedirector.hpe.com  kubedirectorconfigs.kubedirector.hpe.com
+kubectl get kubedirectorcl<<TAB>>
+kubectl get kubedirectorclusters.kubedirector.hpe.com<<ENTER>>
+```
+:::
+
 Which should return something like the following:
 
 ```
