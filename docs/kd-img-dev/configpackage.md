@@ -255,16 +255,16 @@ configscripts
 Wait a few seconds and try `ls /opt` again - keep trying until you see a `guestconfig` folder:
 
 ```
-[root@kdss-bhnd5-0 /]# ls /opt/
+[root@kdss-kzbwq-0 /]# ls /opt/
 configscripts  guestconfig
-[root@kdss-bhnd5-0 /]# ls /opt/guestconfig/
+[root@kdss-kzbwq-0 /]# ls /opt/guestconfig/
 appconfig/        configure.status  configure.stderr  configure.stdout
 ```
 
 If we cat `configure.stdout` we should see the output from our startscript:
 
 ```
-[root@kdss-bhnd5-0 /]# cat /opt/guestconfig/configure.stdout 
+[root@kdss-kzbwq-0 /]# cat /opt/guestconfig/configure.stdout 
 Valid values. So execute the later code
 Starting configuration with option '--configure' on node
 ```
