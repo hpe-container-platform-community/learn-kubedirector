@@ -77,9 +77,15 @@ This script is executed by KubeDirector.  It is executed for events in a KubeDir
  
 ## Create a basic config package
 
-In this section we modify the ubuntu application to log the action inside the container.
+In this section we modify the centos application to log the action inside the container.
 
-In the folder you created for the [previous lession](/docs/kd-img-dev/customdockerimage) - `/deploy/example_catalog/myubuntu` 
+:::info previously based on ubuntu
+This section initially was based on the ubuntu image, but it appears that image
+doesn't support appconfig at the moment.
+See [here](https://github.com/bluek8s/kubedirector/issues/417) for more info.
+:::
+
+In the folder you created for the [previous lession](/docs/kd-img-dev/customdockerimage) - `/deploy/example_catalog/mycentos` 
 create another directory `appconfig` and inside that folder, create a new file named `startscript` with the contents:
 
 ```bash
@@ -95,7 +101,7 @@ fi
 echo "Starting configuration with option '$1' on node"
 ```
 
-Open a terminal and change into the folder `/deploy/example_catalog/myubuntu`.
+Open a terminal and change into the folder `/deploy/example_catalog/mycentos`.
 
 Create a tar file with the appconfig:
 
@@ -130,18 +136,18 @@ docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
 ## Build and Push image
 
-In the terminal, change to the `myubuntu` folder and build your custom image and push it to the local registry:
+In the terminal, change to the `mycentos` folder and build your custom image and push it to the local registry:
 
 ```bash
-docker build --tag myubuntu:1.0 .
+docker build --tag mycentos:1.0 .
 
-docker tag myubuntu:1.0 localhost:5000/myubuntu:1.0
+docker tag mycentos:1.0 localhost:5000/mycentos:1.0
 ```
 
 Next we push the image to our local registry:
 
 ```bash
-docker push localhost:5000/myubuntu:1.0
+docker push localhost:5000/mycentos:1.0
 ```
 
 ## Update the KD app image
@@ -163,7 +169,7 @@ and `defaultImageRepoTag` is:
 ```json
 {
     ...
-    "defaultImageRepoTag": "localhost:5000/myubuntu:1.0"
+    "defaultImageRepoTag": "localhost:5000/mycentos:1.0"
     ...
 }
 ```
@@ -240,8 +246,28 @@ kdss-kzbwq-0                    1/1     Running   0          105s
 kubedirector-7f9d95c9d5-wjm2j   1/1     Running   0          47h
 ```
 
-More content coming soon ...
+```
+$ kubectl exec -it kdss-kzbwq-0 -- /bin/bash
+[root@kdss-kzbwq-0 /]# ls /opt/
+configscripts
+```
 
+Wait a few seconds and try `ls /opt` again - keep trying until you see a `guestconfig` folder:
+
+```
+[root@kdss-bhnd5-0 /]# ls /opt/
+configscripts  guestconfig
+[root@kdss-bhnd5-0 /]# ls /opt/guestconfig/
+appconfig/        configure.status  configure.stderr  configure.stdout
+```
+
+If we cat `configure.stdout` we should see the output from our startscript:
+
+```
+[root@kdss-bhnd5-0 /]# cat /opt/guestconfig/configure.stdout 
+Valid values. So execute the later code
+Starting configuration with option '--configure' on node
+```
 
 ## Reference
 
