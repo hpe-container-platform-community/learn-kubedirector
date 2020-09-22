@@ -113,7 +113,7 @@ tar cvzf appconfig.tgz appconfig/
 Update the Dockerfile so that it now contains:
 
 ```Dockerfile
-FROM bluedata/ubuntu18.04:1.1
+FROM bluedata/centos7:4.1
 
 RUN ! test -d /opt/configscripts || mkdir /opt/configscripts/
 
@@ -152,7 +152,7 @@ docker push localhost:5000/mycentos:1.0
 
 ## Update the KD app image
 
-Ensure `defaultConfigPackage` in the file `deploy/example_catalog/cr-app-ubuntu18.04.json` is set to:
+Ensure `defaultConfigPackage` in the file `deploy/example_catalog/cr-app-centos7.json` is set to:
 
 ```json
 {
@@ -182,16 +182,16 @@ First ensure you aren't still running an Ubuntu KD clusters from the previous tu
 kubectl delete kubedirectorclusters.kubedirector.hpe.com ubuntu18.04-persistent
 ```
 
-Next undeploy the existing Ubuntu KD application image definition:
+Next undeploy the existing Centos 7 KD application image definition:
 
 ```bash
-kubectl delete kubedirectorapps.kubedirector.hpe.com ubuntu18x
+kubectl delete kubedirectorapps.kubedirector.hpe.com centos7x
 ```
 
-Deploy the new Ubuntu KD application with your changes:
+Deploy the new Centos KD application with your changes:
 
 ```bash
-kubectl apply -f ../cr-app-ubuntu18.04.json
+kubectl apply -f ../cr-app-centos7.json
 ```
 
 Check the deployment was successful:
@@ -207,19 +207,21 @@ NAME                     AGE
 ...
 tensorflow-gpu-jupyter   18h
 training-engine          18h
-ubuntu18x                5s
+centos7x                 5s
 ```
 
 ## Deploy the KD Cluster
 
+First modify `../../example_clusters/cr-cluster-centos7.yam` - set memory attributes to `1Gi`.
+
 Next we can deploy the KD Cluster:
 
 ```bash
-kubectl apply -f ../../example_clusters/cr-cluster-ubuntu18.04-stor.yaml
+kubectl apply -f ../../example_clusters/cr-cluster-centos7.yaml
 ```
 
 ```bash
-kubectl describe kubedirectorclusters.kubedirector.hpe.com ubuntu18.04-persistent
+kubectl describe kubedirectorclusters.kubedirector.hpe.com centos7
 ```
 
 You may need to run the above command several times until the Cluster is `stable`:
@@ -229,11 +231,11 @@ Events:
   Type    Reason   Age                From          Message
   ----    ------   ----               ----          -------
   Normal  Cluster  31s                kubedirector  new
-  Normal  Role     31s                kubedirector  creating role{vanilla_ubuntu}
-  Normal  Role     31s                kubedirector  changing replicas count for role{vanilla_ubuntu}: 0 -> 1
-  Normal  Role     31s (x3 over 31s)  kubedirector  waiting for replicas count for role{vanilla_ubuntu}: 0 -> 1
-  Normal  Member   1s                 kubedirector  initial config skipped for member{kdss-4p8kt-0} in role{vanilla_ubuntu}
-  Normal  Role     1s                 kubedirector  notify skipped for members in role{vanilla_ubuntu}
+  Normal  Role     31s                kubedirector  creating role{vanilla_centos}
+  Normal  Role     31s                kubedirector  changing replicas count for role{vanilla_centos}: 0 -> 1
+  Normal  Role     31s (x3 over 31s)  kubedirector  waiting for replicas count for role{vanilla_centos}: 0 -> 1
+  Normal  Member   1s                 kubedirector  initial config skipped for member{kdss-4p8kt-0} in role{vanilla_centos}
+  Normal  Role     1s                 kubedirector  notify skipped for members in role{vanilla_centos}
   Normal  Cluster  1s                 kubedirector  stable
 ```
 
