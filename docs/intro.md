@@ -7,7 +7,7 @@ slug: /
 This site is split into five sections:
 
 - **Introduction** (this section)
-- [**Lab Installation**](docs/lab/overview) - install a lab for KD
+- [**Lab Installation**](/docs/lab/overview) - install a lab for KD
 - **Using KD** - learn how to use KD
 - **KD Image Development** - learrn how to create KD images
 - **KD Development** - learrn how to hack KD itself
