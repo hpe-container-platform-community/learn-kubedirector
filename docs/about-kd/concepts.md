@@ -11,11 +11,11 @@ A **Virtual Cluster** is generally a multiple-**node** application where the **n
 
 ## Node
 
-A node (also called a virtual node or instance) is an embedded, fully managed secure Docker container (TODO - verify this).
+A **Node** (also called a virtual node or instance) is pod?? (TODO - verify this).
 
 ## Role
 
-This ...
+The node **Role** defines a set of applications or services and supporting files that run on a given node.
 
 ---
 
