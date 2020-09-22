@@ -50,7 +50,7 @@ NAME                            READY   STATUS              RESTARTS   AGE
 kubedirector-7f9d95c9d5-j8rh4   0/1     ContainerCreating   0          90s
 ```
 
-You can see that mine is still creating, so I run `kubectl describe` to inspect status:
+You can see that mine is still creating, so I run `kubectl describe` to inspect its status:
 
 ```
 $ kubectl describe pod kubedirector-7f9d95c9d5-j8rh4 
@@ -62,7 +62,7 @@ Events:
   Normal  Pulling    2m59s  kubelet, localhost.localdomain  Pulling image "bluek8s/kubedirector:unstable"
 ```
 
-Deploy failed for me because the image pull was talking a long time.
+Deploy failed for me because the image pull was talking a long time. 
 
 I checked a few more times with `kubectl describe` until I saw:
 
