@@ -212,7 +212,7 @@ centos7x                 5s
 
 ## Deploy the KD Cluster
 
-First modify `../../example_clusters/cr-cluster-centos7.yam` - set memory attributes to `1Gi`.
+First modify `../../example_clusters/cr-cluster-centos7.yaml` - set memory attributes to `1Gi`.
 
 Next we can deploy the KD Cluster:
 
