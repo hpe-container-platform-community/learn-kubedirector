@@ -3,7 +3,7 @@ id: install1
 title: Install - Part 1
 ---
 
-In this section, you will install the pre-requisite software.
+In this section, you will install the prerequisite software.
 
 ## Virtualbox
 
