@@ -1,6 +1,6 @@
 ---
 id: prereqs
-title: Pre-requisites 
+title: Prerequisites 
 ---
 
 You will need:
