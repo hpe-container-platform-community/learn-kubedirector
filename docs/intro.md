@@ -8,9 +8,9 @@ This site is split into five sections:
 
 - **Introduction** (this section)
 - [**Lab Installation**](/docs/lab/overview) - install a lab for KD
-- **Using KD** - learn how to use KD
-- **KD Image Development** - learrn how to create KD images
-- **KD Development** - learrn how to hack KD itself
+- [**Using KD**](/docs/kd-user/intro) - learn how to use KD
+- [**KD Image Development**](/docs/kd-img-dev/overview) - learrn how to create KD images
+- [**KD Development**](/docs/kd-dev/overview) - learrn how to hack KD itself
 
 Each section builds on the previous section.
 
