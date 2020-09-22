@@ -8,7 +8,7 @@ module.exports = {
       'lab/install3',
       'lab/advanced'
     ],
-    "About KD": [
+    "KD Overview": [
       'about-kd/intro',
     ],
     "Using KD": [
