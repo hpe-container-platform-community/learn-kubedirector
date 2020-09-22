@@ -3,6 +3,14 @@ id: configpackage
 title: Config Package
 ---
 
+A config package allows the application author to write logic that gets executed by KubeDirector for certain lifecycle events.
+
+The supported lifecycle events are currently:
+
+ - configure
+ - addnodes
+ - delnodes
+
 ## Explore an existing config package
 
 To learn about config package, let's explore an application that has `defaultConfigPackage` defined.
@@ -270,6 +278,24 @@ If we cat `configure.stdout` we should see the output from our startscript:
 Valid values. So execute the later code
 Starting configuration with option '--configure' on node
 ```
+
+## Exercise
+
+### Exercise 1
+
+Add a node to the cluster by increasing `members` from `1` to `2` in the file `cr-cluster-centos7.yaml`.
+
+Apply the changes with `kubectl apply -f ../../example_clusters/` and use `kubectl describe ...` to wait for the changes to finish.
+
+What do you see in the `/opt/guestconfig/configure.stdout` for both pods?
+
+### Exercise 2
+
+The KD App Role [definition](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#role) has an attribute `eventList`.
+
+Delete your KD cluster and modify the eventList in `deploy/example_catalog/cr-app-centos7.json` so that your application reacts only to `configure` and `delnodes`.
+
+Delete and apply the KD application definition for the centos7 app and create a new centos cluster with one and then two members.  Observe the events that are reported in `/opt/guestconfig/configure.stdout`.
 
 ## Reference
 
