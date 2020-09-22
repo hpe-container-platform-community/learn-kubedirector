@@ -1,6 +1,9 @@
 module.exports = {
   someSidebar: {
-    Introduction: ['intro', 'prereqs' ],
+    Introduction: [
+      'intro', 
+      'prereqs'
+    ],
     "Lab Installation": [
       'lab/overview',
       'lab/install1',
@@ -26,6 +29,8 @@ module.exports = {
       'kd-img-dev/configpackage', 
       'kd-img-dev/more'
     ],
-    "KD Development": ['kd-dev/overview'],
+    "KD Development": [
+      'kd-dev/overview'
+    ],
   },
 };
