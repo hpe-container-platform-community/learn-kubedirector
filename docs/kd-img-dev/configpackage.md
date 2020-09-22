@@ -300,6 +300,3 @@ Delete and apply the KD application definition for the centos7 app and create a 
 ## Reference
 
 More content coming soon ...
-
----
-Waiting for information here: https://github.com/bluek8s/kubedirector/issues/412
