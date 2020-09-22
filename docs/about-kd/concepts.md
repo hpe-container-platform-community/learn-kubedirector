@@ -5,7 +5,7 @@ title: Concepts
 
 On this page we learn KubeDirector concepts.
 
-## Virtual clusters
+## Virtual Cluster
 
 A **Virtual Cluster** is generally a multiple-**node** application where the **nodes** work together and each **node** has a predefined **Role** within the cluster.
 
