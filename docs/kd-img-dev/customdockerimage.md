@@ -70,7 +70,7 @@ The full json should now look like this:
 }
 ```
 
-### Create Dockerfile
+## Create Dockerfile
 
 We need to create a `Dockerfile` - let's create a **new folder** for it inside `deploy/example_catalog/` called `myubuntu`:
 
@@ -88,7 +88,7 @@ RUN touch /modified_by_yourname
 
 Change `yourname` to your name without spaces or special characters.
 
-### Run a local registry
+## Run a local registry
 
 To make development easier, we will deploy a local registry to push our custom image to:
 
@@ -96,7 +96,7 @@ To make development easier, we will deploy a local registry to push our custom i
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ```
 
-### Build and Push image
+## Build and Push image
 
 In the terminal, change to the `myubuntu` folder and build your custom image and push it to the local registry:
 
@@ -112,7 +112,7 @@ Next we push the image to our local registry:
 docker push localhost:5000/myubuntu:1.0
 ```
 
-### Deploy the KD app image
+## Deploy the KD app image
 
 First ensure you aren't still running an Ubuntu KD clusters from the previous tutorial.
 
@@ -148,7 +148,7 @@ training-engine          18h
 ubuntu18x                47s
 ```
 
-### Deploy the KD Cluster
+## Deploy the KD Cluster
 
 Next we can deploy the KD Cluster:
 
