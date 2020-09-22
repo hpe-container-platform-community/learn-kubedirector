@@ -10,10 +10,10 @@ module.exports = {
     ],
     "KD Overview": [
       'about-kd/intro',
+      'about-kd/concepts',
     ],
     "Using KD": [
       'kd-user/intro',
-      'kd-user/concepts',
       'kd-user/using',
       'kd-user/storage',
       'kd-user/configuring',
