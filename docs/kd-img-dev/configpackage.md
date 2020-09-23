@@ -299,4 +299,4 @@ Delete and apply the KD application definition for the centos7 app and create a 
 
 ## Reference
 
-More content coming soon ...
+Config Package [specification](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#configpackage)
