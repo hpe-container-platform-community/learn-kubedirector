@@ -295,7 +295,7 @@ The KD App Role [definition](https://github.com/bluek8s/kubedirector/wiki/KubeDi
 
 Delete your KD cluster and modify the eventList in `deploy/example_catalog/cr-app-centos7.json` so that your application reacts only to `configure` and `delnodes`.
 
-Delete and apply the KD application definition for the centos7 app and create a new centos cluster with one and then two members.  Observe the events that are reported in `/opt/guestconfig/configure.stdout`.
+Delete and apply the KD application definition for the centos7 app and create a new centos cluster with one member and then increase to two members.  Observe the events that are reported in `/opt/guestconfig/configure.stdout`.
 
 ## Reference
 
