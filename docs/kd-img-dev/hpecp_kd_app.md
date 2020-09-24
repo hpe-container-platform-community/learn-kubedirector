@@ -39,11 +39,13 @@ hpecp config get --query 'objects.[bds_global_version]' --output text
 ```
 :::
 
+First we want to list the K8S clusters:
+
 ```bash
  hpecp k8scluster list
  ```
  
- Returns something like:
+ This will return something like:
  
 ```
 +----------------------+------+-------------+-------------+--------+
@@ -53,11 +55,13 @@ hpecp config get --query 'objects.[bds_global_version]' --output text
 +----------------------+------+-------------+-------------+--------+
 ```
 
+We can then get the details for the cluster we are interested in - in this particular case `/api/v2/k8scluster/1`:
+
 ```
 hpecp k8scluster get /api/v2/k8scluster/1
 ```
 
-Returns something like this:
+This will returns something like the following:
 
 ```yaml
 _links:
@@ -84,8 +88,8 @@ hpecp k8scluster add-addons --id /api/v2/k8scluster/1 --addons [harbor]
 
 ## Retrieve the Harbor url
 
-You can see the output from `hpecp k8scluster get /api/v2/k8scluster/1` that 
-the harbor endpoint is: `https://ip-10-1-0-108.eu-west-3.compute.internal:10004`
+In the output from `hpecp k8scluster get /api/v2/k8scluster/1`, above you can see that 
+my harbor endpoint is: `https://ip-10-1-0-108.eu-west-3.compute.internal:10004`
 
 ## Login to Harbor
 
