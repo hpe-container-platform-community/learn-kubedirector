@@ -1,6 +1,6 @@
 ---
 id: hpecp_kd_app 
-title: HPE Ezmeral Container Platform (optional)
+title: HPE Ezmeral CP (optional)
 ---
 
 In this section, we apply the concepts learn in our lab and deploy our custom application to the HPE Ezmeral Container Platform.
