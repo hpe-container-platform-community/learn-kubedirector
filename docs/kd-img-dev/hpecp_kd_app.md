@@ -89,7 +89,9 @@ hpecp k8scluster add-addons --id /api/v2/k8scluster/1 --addons [harbor]
 ## Retrieve the Harbor url
 
 In the output from `hpecp k8scluster get /api/v2/k8scluster/1`, above you can see that 
-my harbor endpoint is: `https://ip-10-1-0-108.eu-west-3.compute.internal:10004`
+my harbor endpoint is: 
+
+- `https://ip-10-1-0-108.eu-west-3.compute.internal:10004`
 
 ## Login to Harbor
 
@@ -98,13 +100,23 @@ Open a browser to the harbor endpoint and login with:
 - Username `admin` 
 - Password `Harbor12345`
 
+Click the **Projects** link:
+
+import myImageUrl from '../../static/img/harbor_projects.png';
+
+<img src={myImageUrl}/>
+
+Next click on the link that corresponds to your HPE Container Platform tenant (in my case `k8s_tenant_1`):
+
 
 <!---
+import myImageUrl2 from '../../static/img/harbor_projects.png';
+
+<img src={myImageUrl2}/>
+
 Copy ca.crt to worker and master `/etc/pki/ca-trust/source/anchors/`
 Run `update-ca-trust`
 --->
-
----
 
 More content coming soon ...
 
