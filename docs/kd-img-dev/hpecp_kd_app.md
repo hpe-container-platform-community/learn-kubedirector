@@ -5,9 +5,15 @@ title: HPE Ezmeral Container Platform (optional)
 
 In this section, we apply the concepts learn in our lab and deploy our custom application to the HPE Ezmeral Container Platform.
 
-- create a Kubernetes Cluster
-- create a Tenant
-- ensure Harbor is enabled and retrieve the endpoint address:
+## Create a Kubernetes Cluster
+
+Using the HPE Ezmeral Container Platform user interface create a Kubernetes cluster.
+
+## Create a Tenant
+
+Using the HPE Ezmeral Container Platform user interface create a tenant for your Kubernetes cluster.
+
+## Ensure Harbor addon is enabled
 
 ```bash
  hpecp k8scluster list
@@ -46,9 +52,23 @@ k8shosts_config:
 ...
 ```
 
-You can see our harbor endpoint is: `https://ip-10-1-0-108.eu-west-3.compute.internal:10004`
+You can see that harbor addon is enabled.  If the harbor is not enabled, you can enable it like this:
 
-Open a browser to the harbor endpoint and login with username `admin` password `Harbor12345`
+```
+hpecp k8scluster add-addons --id /api/v2/k8scluster/1 --addons [harbor]
+```
+
+## Retrieve the Harbor url
+
+You can see the output from `hpecp k8scluster get /api/v2/k8scluster/1` that 
+the harbor endpoint is: `https://ip-10-1-0-108.eu-west-3.compute.internal:10004`
+
+## Login to Harbor
+
+Open a browser to the harbor endpoint and login with:
+
+- Username `admin` 
+- Password `Harbor12345`
 
 
 <!---
