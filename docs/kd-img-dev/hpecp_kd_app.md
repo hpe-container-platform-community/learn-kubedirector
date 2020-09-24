@@ -3,7 +3,12 @@ id: hpecp_kd_app
 title: HPE Ezmeral CP (optional)
 ---
 
-In this section, we apply the concepts learn in our lab and deploy our custom application to the HPE Ezmeral Container Platform.
+In this section we apply the concepts learned in the previous lesson and 
+we deploy our custom application to the HPE Ezmeral Container Platform.
+
+Previously we deployed a docker registry and pushed our image there.
+For deploying our KD application to Ezmeral Container Platform we will enable
+Harbor as the registry. 
 
 ## Create a Kubernetes Cluster
 
