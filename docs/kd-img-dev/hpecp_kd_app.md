@@ -50,6 +50,12 @@ You can see our harbor endpoint is: `https://ip-10-1-0-108.eu-west-3.compute.int
 
 Open a browser to the harbor endpoint and login with username `admin` password `Harbor12345`
 
+
+<!---
+Copy ca.crt to worker and master `/etc/pki/ca-trust/source/anchors/`
+Run `update-ca-trust`
+--->
+
 ---
 
 More content coming soon ...
