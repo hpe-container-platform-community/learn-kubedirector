@@ -21,7 +21,7 @@ Using the HPE Ezmeral Container Platform user interface create a tenant for your
 ## Ensure Harbor addon is enabled
 
 :::info
-This step uses the [hpecp cli](https://pypi.org/project/hpecp/).  You can install it with:
+This step uses the [hpecp](https://pypi.org/project/hpecp/) CLI.  You can install it with:
 
 ```
 pip3 install hpecp`
