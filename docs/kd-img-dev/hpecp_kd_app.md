@@ -40,7 +40,7 @@ hpecp k8scluster get /api/v2/k8scluster/1
 
 Returns something like this:
 
-```
+```yaml
 _links:
   self:
     href: /api/v2/k8scluster/1
