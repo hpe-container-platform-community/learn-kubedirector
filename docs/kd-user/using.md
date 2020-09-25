@@ -131,7 +131,12 @@ You can query the KubeDirector cluster services with the following:  `kubectl ge
 For example:
 
 ```
-$ kubectl get services -l kubedirector.hpe.com/kdcluster=ubuntu18.04
+kubectl get services -l kubedirector.hpe.com/kdcluster=ubuntu18.04
+```
+
+For me, this returns:
+
+```
 NAME             TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
 kdhs-q6nb9       ClusterIP      None            <none>        8888/TCP       4h49m
 s-kdss-gpdft-0   LoadBalancer   10.101.174.78   <pending>     22:44823/TCP   4h49m
@@ -140,7 +145,12 @@ s-kdss-gpdft-0   LoadBalancer   10.101.174.78   <pending>     22:44823/TCP   4h4
 Because we are running on Minikube, the LoadBalancer type makes the Service accessible through the `minikube service` command.
 
 ```
-$ minikube service s-kdss-gpdft-0
+minikube service s-kdss-gpdft-0
+```
+
+On my environment, this shows:
+
+```
 |-----------|----------------|----------------|------------------------|
 | NAMESPACE |      NAME      |  TARGET PORT   |          URL           |
 |-----------|----------------|----------------|------------------------|
@@ -153,7 +163,12 @@ $ minikube service s-kdss-gpdft-0
 We can now access the ssh service:
 
 ```
-$ ssh 10.0.2.15 -p 44823
+ssh 10.0.2.15 -p 44823
+```
+
+We are then prompted for a password:
+
+```
 The authenticity of host '[10.0.2.15]:44823 ([10.0.2.15]:44823)' can't be established.
 ECDSA key fingerprint is SHA256:Dn6oo2QkGVHPKuyxZ4IsppQ5pdydwkJoWmtojnDC5Qo.
 ECDSA key fingerprint is MD5:2d:de:32:8e:da:4a:bc:c7:76:f3:77:8b:99:38:15:53.
@@ -167,10 +182,15 @@ Note that we can't login yet because we haven't created a ssh user inside the co
 We will do that next.
 :::
 
-Let's create a user inside the container:
+Let's create a user inside the container.  First let's find the pod:
 
 ```
-$ kubectl get pods
+kubectl get pods
+```
+
+Returns:
+
+```
 NAME                            READY   STATUS    RESTARTS   AGE
 kdss-gpdft-0                    1/1     Running   0          5h8m
 kubedirector-7f9d95c9d5-mpw22   1/1     Running   0          5h8m
@@ -179,7 +199,12 @@ kubedirector-7f9d95c9d5-mpw22   1/1     Running   0          5h8m
 Pod `kdss-gpdft-0` looks like it is our pod, let's check:
 
 ```
-[vagrant@control-plane kubedirector]$ kubectl describe pods kdss-gpdft-0 
+kubectl describe pods kdss-gpdft-0 
+```
+
+Returns:
+
+```
 Name:         kdss-gpdft-0
 Namespace:    default
 Priority:     0
@@ -210,7 +235,7 @@ Our kdcluster ID (Name) is `ubuntu18.04` so we know that `kdss-gpdft-0` is our u
 As a shortcut in the future, we can find the pod for our kdcluster by name using:
 
 ```
-$ kubectl get pods -l kubedirector.hpe.com/kdcluster=ubuntu18.04
+kubectl get pods -l kubedirector.hpe.com/kdcluster=ubuntu18.04
 ```
 
 Here we specify the name of our kdcluster: `ubuntu18.04`
@@ -220,7 +245,12 @@ Here we specify the name of our kdcluster: `ubuntu18.04`
 Let's login to the container using kubectl:
 
 ```
-$ kubectl exec -it kdss-gpdft-0 -- /bin/bash
+kubectl exec -it kdss-gpdft-0 -- /bin/bash
+```
+
+Which starts a bash session on the container:
+
+``
 root@kdss-gpdft-0:/# 
 ```
 
@@ -244,7 +274,12 @@ Current Kerberos password: <Just press Enter key>
 We can now exit the `kubectl exec` session, and ssh in as the `demouser`:
 
 ```
-$ ssh demouser@10.0.2.15 -p 44823
+ssh demouser@10.0.2.15 -p 44823
+```
+
+and login:
+
+```
 demouser@10.0.2.15's password: P@55w0rd12345
 ```
 
@@ -255,6 +290,11 @@ You can now exit the SSH session.
 We are finished with this exercise, so let's delete the cluster:
 
 ```
-$ kubectl delete  KubeDirectorCluster ubuntu18.0
+kubectl delete  KubeDirectorCluster ubuntu18.0
+```
+
+This should return:
+
+```
 kubedirectorcluster.kubedirector.hpe.com "ubuntu18.04" deleted
 ```
