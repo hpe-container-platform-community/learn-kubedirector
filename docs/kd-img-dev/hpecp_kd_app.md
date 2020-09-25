@@ -28,13 +28,19 @@ Using the HPE Ezmeral Container Platform user interface create a tenant for your
 This step uses the [hpecp](https://pypi.org/project/hpecp/) CLI.  You can install it with:
 
 ```
-pip3 install hpecp`
+pip3 install hpecp
 ```
 
 After installing, configure with:
 
 ```
 hpecp configure-cli
+```
+
+If the above command fails, ensure your PATH contains the output from the following command:
+
+```
+echo $(python3 -m site --user-base)/bin
 ```
 
 You can test the CLI is set up correctly with the following command which connects to the HPE Ezmeral cluster and retrieves it's build version.
@@ -425,6 +431,5 @@ If we cat `configure.stdout` we should see the output from our startscript:
 Valid values. So execute the later code
 Starting configuration with option '--configure' on node
 ```
-
 
 
