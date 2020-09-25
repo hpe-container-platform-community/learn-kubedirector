@@ -106,7 +106,10 @@ import myImageUrl from '../../static/img/harbor_projects.png';
 
 <img src={myImageUrl}/>
 
-Next click on the link that corresponds to your HPE Container Platform tenant (in my case `k8s_tenant_1`):
+Next click on the link that corresponds to your HPE Container Platform tenant (in my case `k8s_tenant_1`) 
+and then select the **Repositories** tab. 
+
+Click on **REGISTRY CERTIFICATE** to download it:
 
 import myImageUrl2 from '../../static/img/harbor_ca_cert.png';
 
