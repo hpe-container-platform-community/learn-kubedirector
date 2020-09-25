@@ -100,6 +100,8 @@ Open a browser to the harbor endpoint and login with:
 - Username `admin` 
 - Password `Harbor12345`
 
+## Download the registry certificate
+
 Click the **Projects** link:
 
 import myImageUrl from '../../static/img/harbor_projects.png';
@@ -114,6 +116,26 @@ Click on **REGISTRY CERTIFICATE** to download it:
 import myImageUrl2 from '../../static/img/harbor_ca_cert.png';
 
 <img src={myImageUrl2}/>
+
+## Copy certificate to HPE CP nodes
+
+In this step, we will copy the `ca.crt` downloaded from the previous step to the k8s hosts.
+
+Retrieve the IP addresses of your k8s worker hosts.
+
+:::Retrieve K8S host IP addresses
+
+You can use the HPE Ezmeral Container Platform UI or the CLI to find the IP addresses.
+
+The CLI can be used like this:
+
+```
+hpecp k8scluster list --columns ['id','name','description','k8shosts_config']
+
+# match the host IDs above to find the IPs below
+hpecp k8sworker list
+```
+:::
 
 <!---
 Copy ca.crt to worker and master `/etc/pki/ca-trust/source/anchors/`
