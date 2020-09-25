@@ -1,3 +1,5 @@
+The end-user content is published here: https://hpe-container-platform-community.github.io/learn-kubedirector/index.html
+
 # Website
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
