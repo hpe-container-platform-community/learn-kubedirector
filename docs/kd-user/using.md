@@ -301,8 +301,7 @@ kubedirectorcluster.kubedirector.hpe.com "ubuntu18.04" deleted
 
 ## Exercises
 
-- Resize a cluster from one to two members
-  - hint: see references, below
+- Resize a cluster from one to two members (hint: see references, below).
   
 :::note
 You may need to [increase the size](/docs/lab/advanced) of your lab Virtual Machine for this exercise.
