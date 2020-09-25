@@ -256,7 +256,7 @@ root@kdss-gpdft-0:/#
 
 Let's create a user account:
 
-```
+```bash
 root@kdss-gpdft-0:/# useradd demouser
 root@kdss-gpdft-0:/# passwd demouser
 Current Kerberos password: <Just press Enter key>
