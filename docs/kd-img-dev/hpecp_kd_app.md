@@ -133,7 +133,7 @@ In this step, we will copy the `ca.crt` downloaded from the previous step to the
 
 Retrieve the IP addresses of your k8s worker hosts.
 
-:::Retrieve K8S host IP addresses
+:::info Retrieve K8S host IP addresses
 
 You can use the HPE Ezmeral Container Platform UI or the CLI to find the IP addresses.
 
