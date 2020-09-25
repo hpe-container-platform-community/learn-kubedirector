@@ -108,12 +108,11 @@ import myImageUrl from '../../static/img/harbor_projects.png';
 
 Next click on the link that corresponds to your HPE Container Platform tenant (in my case `k8s_tenant_1`):
 
-
-<!---
-import myImageUrl2 from '../../static/img/harbor_projects.png';
+import myImageUrl2 from '../../static/img/harbor_ca_cert.png';
 
 <img src={myImageUrl2}/>
 
+<!---
 Copy ca.crt to worker and master `/etc/pki/ca-trust/source/anchors/`
 Run `update-ca-trust`
 --->
