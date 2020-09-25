@@ -209,6 +209,7 @@ You will use these commands below.
 In the terminal, change to the `mycentos` folder and build your custom image and push it to the local registry:
 
 ```bash
+# set MY_REPO for your environment
 MY_REPO="ip-10-1-0-108.eu-west-3.compute.internal:10004/k8s_tenant_1"
 
 docker build --tag mycentos:1.0 .
