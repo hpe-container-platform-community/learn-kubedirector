@@ -6,8 +6,8 @@ title: Prerequisites
 You will need:
 
  - Windows, Mac OS, or Linux x64 desktop/laptop
- - at least 4GB ram to dedicate to running a Virtual Machine
- - at least 5GB disk space
+ - At least 4GB ram to dedicate to running a Virtual Machine
+ - At least 5GB disk space
 
 You should be comfortable with the following:
 
