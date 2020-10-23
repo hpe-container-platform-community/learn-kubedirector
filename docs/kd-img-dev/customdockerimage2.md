@@ -223,6 +223,6 @@ Modify the catalog definition `deploy/example_catalog/cr-app-hello-world.json` t
 
 ## Test your changes
 
-You should now be able to run `kubectl apply -f ...` to update the catalog image and recreate the cluster and it should now start without error.
+You should now be able to run `kubectl apply -f ...` to update the catalog image and recreate the cluster and it should now start without any issues.
 
 
