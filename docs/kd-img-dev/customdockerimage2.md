@@ -183,7 +183,7 @@ The original Dockerfile is based on alpine:
 FROM node:13.6.0-alpine
 ```
 
-So we need to run alpine commands to install the required packages:
+So we need to run alpine `apk` commands to install the required packages:
 
 ```Dockerfile
 FROM paulbouwer/hello-kubernetes:1.8
