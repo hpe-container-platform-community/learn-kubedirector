@@ -147,7 +147,32 @@ stat /bin/bash: no such file or directory
 
 ## Custom image requirements
 
+If the KubeDirector App Image Authoring [wiki page](https://github.com/bluek8s/kubedirector/wiki/App-Definition-Authoring-for-KubeDirector) we can find:
 
+> Images must have the following utilities installed and available in the standard executables path for the container user: python2, curl, and tar.
 
+It appears that app images also require `bash` - an [issue](https://github.com/bluek8s/kubedirector/issues/430) has been raised for this.
 
+## Update custom app image
+
+The solution for me was to fork the github project [paulbouwer/hello-kubernetes](https://github.com/paulbouwer/hello-kubernetes) and update the dockerfile to add these dependencies.  
+
+The original Dockerfile is based on alpine:
+
+```
+FROM node:13.6.0-alpine
+```
+
+So we need to run alpine commands to install the required packages:
+
+```Dockerfile
+FROM paulbouwer/hello-kubernetes:1.8
+
+USER root
+
+RUN apk update && apk upgrade && apk add bash python2 tar curl
+
+USER node
+CMD [ "npm", "start" ]
+```
 
