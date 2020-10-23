@@ -26,6 +26,7 @@ module.exports = {
       'kd-img-dev/overview', 
       'kd-img-dev/defaultpersistdirs', 
       'kd-img-dev/customdockerimage', 
+      'kd-img-dev/customdockerimage2', 
       'kd-img-dev/configpackage',
       'kd-img-dev/hpecp_kd_app',
       'kd-img-dev/more'
