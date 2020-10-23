@@ -145,6 +145,26 @@ Observe the first warning event.  At the end of the message we see:
 stat /bin/bash: no such file or directory
 ```
 
+If you inspect the KD application image output:
+
+```console
+kubectl describe kubedirectorclusters.kubedirector.hpe.com hellok8s-paulbouwer
+```
+
+You will notice the member is stuck in the `waiting` state:
+
+```console
+...
+  Member State Rollup:
+    Config Errors:         false
+    Members Down:          false
+    Members Initializing:  false
+    Members Restarting:    false
+    Members Waiting:       true
+    Membership Changing:   false
+...
+```
+
 ## Custom image requirements
 
 If the KubeDirector App Image Authoring [wiki page](https://github.com/bluek8s/kubedirector/wiki/App-Definition-Authoring-for-KubeDirector) we can find:
@@ -175,4 +195,34 @@ RUN apk update && apk upgrade && apk add bash python2 tar curl
 USER node
 CMD [ "npm", "start" ]
 ```
+
+## Build new docker image
+
+The easiest solution for me was to build a new docker image.  First lets open a new terminal in the kubedirector lab IDE, then:
+
+```console
+git clone https://github.com/snowch/hello-kubernetes
+cd hello-kubernetes/
+docker build -t localhost:5000/hello-world:0.1 .
+docker push localhost:5000/hello-world
+```
+
+Note: if docker push returns an error ensure your local docker registry is [running](https://hpe-container-platform-community.github.io/learn-kubedirector/docs/kd-img-dev/customdockerimage#run-a-local-registry).
+
+## Update catalog defintion
+
+Modify the catalog definition `deploy/example_catalog/cr-app-hello-world.json` to use your new image
+
+```json
+{
+   ...
+        "defaultImageRepoTag": "localhost:5000/hello-world:0.1",
+   ...
+}
+```
+
+## Test your changes
+
+You should now be able to run `kubectl apply -f ...` to update the catalog image and recreate the cluster and it should now start without error.
+
 
