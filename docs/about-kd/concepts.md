@@ -11,7 +11,7 @@ A **Virtual Cluster** is generally a multiple-**node** application where the **n
 
 ## Node
 
-A **Node** (also called a virtual node or instance) is a pod?? (TODO - verify this).
+A **Node** (also called a virtual node or instance) is a pod.
 
 ## Role
 
