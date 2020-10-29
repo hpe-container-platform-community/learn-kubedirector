@@ -19,6 +19,10 @@ git clone https://github.com/bluek8s/kubedirector
 
 ## Install vagrant plugin
 
+The KubeDirector lab requires Virtualbox Guest Additions to be installed in the virtual machine and having the same version as the Virtualbox application. 
+
+The vagrant-vbguest plugin ensures Virtualbox Guest Additions is correctly installed.
+
 ```
 vagrant plugin install vagrant-vbguest
 ```
