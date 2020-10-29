@@ -35,6 +35,17 @@ This step can take quiet a long time - it needs to download a VM image around 2.
 vagrant up
 ```
 
+:::info mounting failed with the error: No such device
+If you receive the following error:
+```
+/sbin/mount.vboxsf: mounting failed with the error: No such device
+```
+Try running:
+```
+vagrant reload
+```
+:::
+
 ## Run the KubeDirector Lab UI
 
 ```
