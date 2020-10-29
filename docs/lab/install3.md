@@ -23,6 +23,20 @@ INFO[0004] Operator build complete.
 done
 ```
 
+:::info bad interpreter
+
+If you receive an error:
+
+```
+/bin/sh: /usr/local/bin/user_setup: /bin/sh^M: bad interpreter: No such file or directory
+```
+Run the following:
+```
+sudo yum install dos2unix
+dos2unix build/bin/user_setup build/bin/entrypoint
+```
+:::
+
 ## Deploy KubeDirector
 
 In the Lab Browser UI terminal, enter the command:
