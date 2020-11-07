@@ -299,4 +299,6 @@ Delete and apply the KD application definition for the centos7 app and create a 
 
 ## Reference
 
-Config Package [specification](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#configpackage)
+ - Config Package [specification](https://github.com/bluek8s/kubedirector/wiki/KubeDirectorApp-Definition#configpackage)
+ - Config Python CLI [source code](https://github.com/bluek8s/configcli)
+ - Config Commands run by KD [source code for v0.5.2](https://github.com/bluek8s/kubedirector/blob/v0.5.2/pkg/controller/kubedirectorcluster/types.go#L74-L101)
