@@ -93,8 +93,19 @@ doesn't support appconfig at the moment.
 See [here](https://github.com/bluek8s/kubedirector/issues/417) for more info.
 :::
 
-Create a directory `/deploy/example_catalog/mycentos`.  Inside that directory, 
-create another directory `appconfig` and inside that folder, create a new file named `startscript` with the contents:
+In a terminal, change into the `deploy/example_catalog` directory:
+
+```
+cd deploy/example_catalog
+```
+
+Create the directories `mycentos` and `mycentos/appconfig`:
+
+```
+mkdir -p mycentos/appconfig
+```
+
+Inside the `appconfig` directory, create a new file named `startscript` with the contents:
 
 ```bash
 #!/bin/env bash
@@ -109,16 +120,14 @@ fi
 echo "Starting configuration with option '$1' on node"
 ```
 
-Open a terminal and change into the folder `/deploy/example_catalog/mycentos`.
-
-Create a tar file with the appconfig:
+In the directory `/deploy/example_catalog/mycentos`, create a tar file with the appconfig:
 
 ```bash
 chmod +x appconfig/startscript
 tar cvzf appconfig.tgz appconfig/
 ```
 
-Update the Dockerfile so that it now contains:
+Create or update the Dockerfile in the `mycentos` directory so that it now contains:
 
 ```Dockerfile
 FROM bluedata/centos7:4.1
@@ -199,7 +208,7 @@ kubectl delete kubedirectorapps.kubedirector.hpe.com centos7x
 Deploy the new Centos KD application with your changes:
 
 ```bash
-kubectl apply -f ../cr-app-centos7.json
+kubectl apply -f cr-app-centos7.json
 ```
 
 Check the deployment was successful:
