@@ -14,7 +14,12 @@ In the Lab Browser UI open a new terminal:
 
 `Main Menu -> Terminal -> New Terminal`
 
-In the terminal enter the command `make`.  You should see:
+In the terminal enter the command 
+
+```
+make
+```
+You should see:
 
 ```
 ...
@@ -35,7 +40,11 @@ Run the following:
 sudo yum install dos2unix
 dos2unix build/bin/user_setup build/bin/entrypoint
 ```
-Then run `make` again.  You shouldn't get any errors this time. 
+Then run make again:
+```
+make
+```
+You shouldn't get any errors this time. 
 :::
 
 ## Deploy KubeDirector
