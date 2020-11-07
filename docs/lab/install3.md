@@ -35,6 +35,7 @@ Run the following:
 sudo yum install dos2unix
 dos2unix build/bin/user_setup build/bin/entrypoint
 ```
+Then run `make` again.  You shouldn't get any errors this time. 
 :::
 
 ## Deploy KubeDirector
