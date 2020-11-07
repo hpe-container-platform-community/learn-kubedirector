@@ -74,7 +74,13 @@ In the UI open a new terminal:
 
 `Main Menu -> Terminal -> New Terminal`
 
-In the terminal enter the command `kubectl get pods`.  You should see:
+In the terminal enter the command:
+
+```
+kubectl get pods
+```
+
+You should see:
 
 ```
 No resources found in default namespace.
