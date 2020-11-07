@@ -3,7 +3,7 @@ id: install3
 title: Install - Part 3
 ---
 
-In this section we will build kubedirector from the source code and deploy it to minikube.
+In this section we will deploy KubeDirector to minikube.
 
 ## Deploy KubeDirector
 
@@ -24,7 +24,20 @@ KubeDirector failed to start -- no admission control hook created!
 make: *** [deploy] Error 1
 ```
 
-Verify that the kubedirector pod is running:
+
+```
+kubectl get pods
+```
+After a few minutes you should see KubeDirector running:
+
+```
+NAME                            READY   STATUS    RESTARTS   AGE
+kubedirector-7f9d95c9d5-5q6bv   1/1     Running   0          2m43s
+``` 
+
+# Advanced debugging (optional)
+
+In this section we do more debugging to verify that the kubedirector pod is running:
 
 ```
 $ kubectl get pods
@@ -52,7 +65,12 @@ I checked a few more times with `kubectl describe` until I saw:
 Normal  Started    37s   kubelet, localhost.localdomain  Started container kubedirector
 ```
 
-At which point I could run `make redeploy` which completed successfully.
+At which point I could run the following which completed successfully:
+
+```
+make undeploy
+make dedeploy
+```
 
 :::
 
