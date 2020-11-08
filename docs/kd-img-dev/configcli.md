@@ -113,16 +113,18 @@ If some of the configcli commands do not work as expected, it could be due to th
 
 ## Using from a shell script
 
-From a shell script (e.g. startscript) you can call the configcli directly, e.g.
+From a shell appconfig script (e.g. startscript) you can call the configcli directly, e.g.
 
 ```
 [root@kdss-xkdsh-0 /]# echo $(configcli namespace distros)
 bluedata/centos7x
 ```
 
+## Using from a Python script
+
 :::info
 
-A startscript can be written in Python.
+App config scripts (e.g. startscript) can also be written in Python.
 
 Information on writing startscript in Python is an advanced topic and will be covered later.
 
