@@ -13,7 +13,7 @@ import myImageUrl from '../../static/img/director_concepts.png';
 
 **KubeDirector Applications** are created by **Application Image author**.  Applications can be thought of as Cluster blueprints. 
 
-**KubeDirector Clusters** are instantiations of **KubeDirector Applications**.  **KubeDirector Clusters** (also called **Virtual Clusters**) is a single or multiple **node** application.  In a multiple node application the **nodes** work together with each **node** having a predefined **Role** within the cluster.
+**KubeDirector Clusters** are instantiations of **KubeDirector Applications**.  A **KubeDirector Cluster** (also called **Virtual Cluster**) is a single or multiple **node** application.  In a multiple node application the **nodes** work together with each **node** having a predefined **Role** within the cluster.
 
 A **Node** (also called a virtual node or instance) is a pod.
 
