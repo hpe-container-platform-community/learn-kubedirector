@@ -9,6 +9,7 @@ import myImageUrl from '../../static/img/director_concepts.png';
 
 <img src={myImageUrl}/>
 
+# Glossary
 
 ## Virtual Cluster
 
@@ -21,7 +22,5 @@ A **Node** (also called a virtual node or instance) is a pod.
 ## Role
 
 The node **Role** defines a set of applications or services and supporting files that run on a given node.
-
----
 
 More info coming soon ...
