@@ -89,3 +89,20 @@ At this point, you  can  run ` kubectl get pods` which should show output someth
 NAME                            READY   STATUS    RESTARTS   AGE
 kubedirector-7f9d95c9d5-j8rh4   1/1     Running   0          1m
 ```
+
+You can run `kubectl get all` to view all objects created when KubeDirector was deployed:
+
+```
+NAME                                READY   STATUS    RESTARTS   AGE
+pod/kubedirector-7f9d95c9d5-vcgsn   1/1     Running   2          11d
+
+NAME                             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/kubedirector-validator   ClusterIP   10.100.99.225   <none>        443/TCP   11d
+service/kubernetes               ClusterIP   10.96.0.1       <none>        443/TCP   64d
+
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/kubedirector   1/1     1            1           11d
+
+NAME                                      DESIRED   CURRENT   READY   AGE
+replicaset.apps/kubedirector-7f9d95c9d5   1         1         1       11d
+```
