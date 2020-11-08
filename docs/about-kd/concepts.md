@@ -5,6 +5,11 @@ title: Concepts
 
 On this page we learn KubeDirector concepts.
 
+import myImageUrl from '../../static/img/director_concepts.png';
+
+<img src={myImageUrl}/>
+
+
 ## Virtual Cluster
 
 A **Virtual Cluster** is generally a multiple-**node** application where the **nodes** work together and each **node** has a predefined **Role** within the cluster.
