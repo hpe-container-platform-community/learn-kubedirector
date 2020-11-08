@@ -105,6 +105,12 @@ ccli> exit
 [root@kdss-xkdsh-0 /]#
 ```
 
+:::info
+
+If some of the configcli commands do not work as expected, it could be due to the following [issue](https://github.com/bluek8s/configcli/issues/1)
+
+:::
+
 ## Using the Config CLI from shell scripts
 
 From a shell script (e.g. startscript) you can call the configcli directly, e.g.
@@ -117,3 +123,7 @@ bluedata/centos7x
 ## Exercise
 
 Update the startscript from the previous [lesson](../configpackage) to use the configcli in some way.
+
+## References
+
+- Config CLI [source code](https://github.com/bluek8s/configcli)
