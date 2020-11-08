@@ -28,6 +28,7 @@ module.exports = {
       'kd-img-dev/customdockerimage', 
       'kd-img-dev/customdockerimage2', 
       'kd-img-dev/configpackage',
+      'kd-img-dev/configcli',
       'kd-img-dev/hpecp_kd_app',
       'kd-img-dev/more'
     ],
