@@ -15,7 +15,17 @@ I wasn't able to find documentation on the Config CLI so let's do some exploring
 
 The Config CLI is installed automatically in containers that have a config package.
 
-If this exercise we use the Centos 7 `KubeDirectorCluster` running from the previous [lesson](./configcli) that has a config package defined:
+If this exercise we use the Centos 7 KubeDirectorCluster running from the previous [lesson](./configcli) that has a config package defined:
+
+```
+{
+    ...
+    "defaultConfigPackage":  {
+        "packageURL": "file:///opt/configscripts/appconfig.tgz"
+    },
+    ...
+}
+```
 
 :::
 
