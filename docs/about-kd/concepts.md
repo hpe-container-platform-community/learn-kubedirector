@@ -19,4 +19,4 @@ A **Node** (also called a virtual node or instance) is a pod.
 
 The node **Role** defines a set of applications or services and supporting files that run on a given node.  All **Roles** in an **KubeDirector Application**:
   - can share the same Docker image or have their own Docker image.
-  - can have an application configuration package specified by the **Application Image author**.  The application configuration package is executed at each life-cycle event allowing the **node** to be customised.
+  - can have an application configuration package that is executed for each life-cycle event allowing the **node** to be customised.
