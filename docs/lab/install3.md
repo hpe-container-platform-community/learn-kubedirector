@@ -94,7 +94,7 @@ You can run `kubectl get all` to view all objects created when KubeDirector was 
 
 ```
 NAME                                READY   STATUS    RESTARTS   AGE
-pod/kubedirector-7f9d95c9d5-vcgsn   1/1     Running   2          11d
+pod/kubedirector-7f9d95c9d5-j8rh4   1/1     Running   2          11d
 
 NAME                             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 service/kubedirector-validator   ClusterIP   10.100.99.225   <none>        443/TCP   11d
