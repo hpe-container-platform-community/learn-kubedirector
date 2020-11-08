@@ -37,6 +37,42 @@ Next open a shell session on the cluster:
 kubectl exec -it your-pod-name -- /bin/bash
 ```
 
+Now execute the configcli application:
+
+```
+[root@kdss-xkdsh-0 /]# configcli 
+Configuration CLI 1.0.
+
+ccli> 
+```
+
+From here you can explore the help:
+
+```
+ccli> help
+
+Documented commands (type help <topic>):
+________________________________________
+EOF  baseimg  ccli  exit  help  macro  namespace
+```
+
+And ...
+
+```
+ccli> help baseimg
+usage: baseimg [-h] {version} ...
+
+Baseimage related information.
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+Subcommands:
+  {version}
+    version   Returns the BlueData's base image version used to build the
+              container image where this command is executed. Returns None if
+              the container image is not based on the BlueData's base image.
+```
 
 
 
