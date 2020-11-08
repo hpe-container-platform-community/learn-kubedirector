@@ -13,6 +13,7 @@ You should be comfortable with the following:
 
  - Kubernetes Concepts:
    - pods
+   - statefulsets
    - services
    - storage classes
    - persistent volumes
