@@ -11,9 +11,9 @@ import myImageUrl from '../../static/img/director_concepts.png';
 
 # Glossary
 
-## Virtual Cluster
+## App Cluster
 
-A **Virtual Cluster** is generally a multiple-**node** application where the **nodes** work together and each **node** has a predefined **Role** within the cluster.
+**App Cluster** (also called **Virtual Cluster**) is a single or multiple **node** application.  In a multiple node application the **nodes** work together with each **node** having a predefined **Role** within the cluster.
 
 ## Node
 
