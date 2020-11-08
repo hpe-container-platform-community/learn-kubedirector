@@ -19,7 +19,9 @@ If this exercise we use the Centos 7 `KubeDirectorCluster` running from the prev
 
 :::
 
-You should still have your `KubeDirectorCluster` running from the previous [lesson](./configcli) if not start it now. 
+You should still have your `KubeDirectorCluster` running from the previous [lesson](./configcli) if not start it now.
+
+Next open a shell session on the cluster:
 
 ```
 kubectl exec -it your-pod-name -- /bin/bash
