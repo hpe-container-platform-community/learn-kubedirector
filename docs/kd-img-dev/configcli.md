@@ -3,7 +3,7 @@ id: configcli
 title: Config CLI
 ---
 
-When the `startscript` gets executed for a lifecycle event it will usually need to retrieve metadata about the environment so that it can react to the event.
+When the `startscript` gets executed for a lifecycle event it will usually need to retrieve metadata about the environment so that you can control how the script reacts to the event.
 
 The Config CLI allows you to retrieve metadata.
 
