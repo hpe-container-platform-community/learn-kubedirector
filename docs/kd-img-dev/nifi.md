@@ -6,7 +6,7 @@ title: Creating a NiFi image
 In the folder where you clone `kubedirector-lab`
 
 ```
-git clone `https://github.com/snowch/kubedirector-nifi
+git clone https://github.com/snowch/kubedirector-nifi
 ```
 
 
@@ -24,5 +24,11 @@ File -> Open Workspace
 
 Navigate to /vagrant/kubedirector-nifi
 
-Expand file menu
+Expand left menu, open terminal
 
+
+```
+docker build --tag nifi:0.1 .
+docker tag nifi:0.1 localhost:5000/nifi:0.1
+docker push localhost:5000/nifi:0.1
+```
