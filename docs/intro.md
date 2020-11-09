@@ -11,7 +11,7 @@ This site is split into five sections:
 - [**KD Overview**](/docs/about-kd/intro) - KD goals, concepts and terminology.
 - [**Using KD**](/docs/kd-user/intro) - learn how to use KD
 - [**KD Image Development**](/docs/kd-img-dev/overview) - learn how to create KD images
-- [**KD Development**](/docs/kd-dev/overview) - learrn how to hack KD itself
+- [**KD Development**](/docs/kd-dev/overview) - learn how to hack KD itself
 
 Each section builds on the previous section.
 
