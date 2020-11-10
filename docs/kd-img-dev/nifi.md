@@ -49,11 +49,7 @@ cd kubedirector-nifi
 
 ### Application Walkthrough
 
-The application currently resides in:
-
-```
-https://github.com/snowch/kubedirector-nifi
-```
+The application currently resides in [kubedirector-nifi-docker-image](https://github.com/snowch/kubedirector-nifi).
 
 Inside the `kubedirector-nifi` git repository there are some files and some submodules (other git repositories):
 
@@ -85,9 +81,9 @@ The `cr-app-nifi.json` file contains the application definition.  The interestin
         },
 ```
 
-If was assumed that the docker image would not need to be changed very often when developing the application so it was put in its own git repository `kubedirector-nifi-docker-image`.   The image has been pushed to docker hub using the tag: `snowch/kubedirector-nifi:latest`.
+If was assumed that the docker image would not need to be changed very often when developing the application so it was put in its own git repository [kubedirector-nifi-docker-image](https://github.com/snowch/kubedirector-nifi-docker-image).   The image has been pushed to docker hub using the tag: `snowch/kubedirector-nifi:latest`.
 
-It was assumed that the config package could change quite a lot so this was also put in its own git repository `kubedirector-nifi-appconfig`.  Every time the app config is modified a git release artifact is created which can be accessed over http.
+It was assumed that the config package could change quite a lot so this was also put in its own git repository [kubedirector-nifi-appconfig](https://github.com/snowch/kubedirector-nifi-appconfig).  Every time the app config is modified a git release artifact is created which can be accessed over http.
 
 This approach allows anyone extending this application to easily change the appconfig and make it available over http.
 
