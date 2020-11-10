@@ -1,6 +1,6 @@
 ---
 id: customdockerimage2
-title: Custom Docker Images (2)
+title: Custom Docker Images 2
 ---
 
 In this section, we will use a third party docker image: https://github.com/paulbouwer/hello-kubernetes
