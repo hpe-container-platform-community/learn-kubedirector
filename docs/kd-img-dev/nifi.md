@@ -1,9 +1,11 @@
 ---
 id: nifi 
-title: Creating a NiFi image
+title: Creating a NiFi Application
 ---
 
-In this session we will create a basic Apache NiFi image and deploy it to HPE Container Platform.
+In this session we will create a basic Apache NiFi KD Application and deploy it to HPE Container Platform.
+
+The application is intentionally kept simple to simplify learning.  Exercises will be suggested at the end of this lesson to add more features.
 
 We do NOT need the kubedirector-lab in this session.
 
