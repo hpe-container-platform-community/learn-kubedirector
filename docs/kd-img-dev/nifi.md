@@ -89,7 +89,7 @@ If was assumed that the docker image would not need to be changed very often whe
 
 It was assumed that the config package could change quite a lot so this was also put in its own git repository `kubedirector-nifi-appconfig`.  Every time the app config is modified a git release artifact is created which can be accessed over http.
 
-This approach allows anyone extending this image to easily change the appconfig and make it available over http.
+This approach allows anyone extending this application to easily change the appconfig and make it available over http.
 
 ### Exercises
 
