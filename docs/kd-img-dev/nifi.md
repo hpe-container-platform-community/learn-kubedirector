@@ -24,3 +24,7 @@ If you select the link for the http endpoint, you should see a NiFi page:
 If you see a HTTP 503 error wait a few minutes for the NiFi service to start and then try again.
 
 :::
+
+You should then see the NiFi canvas:
+
+![NiFi Canvas](/img/nifi_canvas.png)
