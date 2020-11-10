@@ -9,5 +9,5 @@ We do NOT need the kubedirector-lab in this session.
 
 After following this lesson you will have a NiFi tile in your list of Applications:
 
-![NiFi Tile](/imgs/nifi_tile.png)
+![NiFi Tile](/img/nifi_tile.png)
 
