@@ -33,4 +33,6 @@ You should then see the NiFi canvas:
 
 ### Installing the NiFi Application
 
-coming soon ...
+The easiest way to deploy the application is to use the Terminal in a HPE Container Platform Kubernetes Tenant:
+
+![NiFi Install](/img/nifi_install.png)
