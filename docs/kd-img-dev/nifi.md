@@ -47,6 +47,51 @@ cd kubedirector-nifi
 ./apply_app_and_cluster.sh
 ```
 
-### Application Image Development
+### Application Walkthrough
 
-Coming soon ...
+The application currently resides in:
+
+```
+https://github.com/snowch/kubedirector-nifi
+```
+
+Inside the `kubedirector-nifi` git repository there are some files and some submodules (other git repositories):
+
+```
+.
+├── LICENSE
+├── README.md
+├── apply_app_and_cluster.sh
+├── cr-app-nifi.json
+├── cr-cluster-nifi.yaml
+├── delete_app_and_cluster.sh
+├── kubedirector-nifi-appconfig
+│   ├── LICENSE
+│   ├── README.md
+│   └── appconfig
+│       └── startscript
+└── kubedirector-nifi-docker-image
+    ├── Dockerfile
+    ├── LICENSE
+    └── README.md
+```
+
+The `cr-app-nifi.json` file contains the application definition.  The interesting parts of the application are:
+
+```
+        "defaultImageRepoTag": "snowch/kubedirector-nifi:latest",
+        "defaultConfigPackage": {
+            "packageURL": "https://github.com/snowch/kubedirector-nifi-appconfig/releases/download/refs%2Fheads%2Fmain/appconfig.tgz"
+        },
+```
+
+If was assumed that the docker image would not need to be changed very often when developing the application so it was put in its own git repository `kubedirector-nifi-docker-image`.   The image has been pushed to docker hub using the tag: `snowch/kubedirector-nifi:latest`.
+
+It was assumed that the config package could change quite a lot so this was also put in its own git repository `kubedirector-nifi-appconfig`.  Every time the app config is modified a git release artifact is created which can be accessed over http.
+
+This approach allows anyone extending this image to easily change the appconfig and make it available over http.
+
+### Exercises
+
+ 1. Follow the instructions [here](https://pierrevillard.com/2016/08/13/apache-nifi-1-0-0-cluster-setup/) to create a multiple-node NiFi cluster.
+ 2. Add a new role which has a haproxy or nginx as a load balancer that uses the `configcli` to retrieve all of the nodes http endpoints and adds the endpoints to the routing configuration.
