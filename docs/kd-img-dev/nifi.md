@@ -75,10 +75,12 @@ Inside the `kubedirector-nifi` git repository there are some files and some subm
 The `cr-app-nifi.json` file contains the application definition.  The interesting parts of the application are:
 
 ```
-        "defaultImageRepoTag": "snowch/kubedirector-nifi:latest",
-        "defaultConfigPackage": {
-            "packageURL": "https://github.com/snowch/kubedirector-nifi-appconfig/releases/download/refs%2Fheads%2Fmain/appconfig.tgz"
-        },
+...
+"defaultImageRepoTag": "snowch/kubedirector-nifi:latest",
+"defaultConfigPackage": {
+   "packageURL": "https://github.com/snowch/kubedirector-nifi-appconfig/releases/download/refs%2Fheads%2Fmain/appconfig.tgz"
+},
+... 
 ```
 
 If was assumed that the docker image would not need to be changed very often when developing the application so it was put in its own git repository [kubedirector-nifi-docker-image](https://github.com/snowch/kubedirector-nifi-docker-image).   The image has been pushed to docker hub using the tag: `snowch/kubedirector-nifi:latest`.
