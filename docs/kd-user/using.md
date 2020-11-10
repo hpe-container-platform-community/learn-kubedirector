@@ -250,7 +250,7 @@ kubectl exec -it kdss-gpdft-0 -- /bin/bash
 
 Which starts a bash session on the container:
 
-``
+```
 root@kdss-gpdft-0:/# 
 ```
 
