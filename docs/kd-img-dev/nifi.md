@@ -93,5 +93,5 @@ This approach allows anyone extending this image to easily change the appconfig 
 
 ### Exercises
 
- 1. Follow the instructions [here](https://pierrevillard.com/2016/08/13/apache-nifi-1-0-0-cluster-setup/) to create a multiple-node NiFi cluster.
- 2. Add a new role which has a haproxy or nginx as a load balancer that uses the `configcli` to retrieve all of the nodes http endpoints and adds the endpoints to the routing configuration.
+ 1. Follow the instructions [here](https://pierrevillard.com/2016/08/13/apache-nifi-1-0-0-cluster-setup/) to support multiple nodes on the NiFi cluster.  You will need to use the configcli and respond to the lifecycle events.
+ 2. Add a new role which has a haproxy or nginx as a load balancer that uses the `configcli` to retrieve all of the nodes http endpoints and adds the endpoints to the routing configuration when a node is added or deleted.
