@@ -30,6 +30,7 @@ module.exports = {
       'kd-img-dev/configpackage',
       'kd-img-dev/configcli',
       'kd-img-dev/hpecp_kd_app',
+      'kd-img-dev/nifi',
       'kd-img-dev/more'
     ],
     "KD Development": [
