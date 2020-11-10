@@ -33,8 +33,20 @@ You should then see the NiFi canvas:
 
 ![NiFi Canvas](/img/nifi_canvas.png)
 
-### Installing the NiFi Application
+### Installing the NiFi App and provision a cluster
 
 The easiest way to deploy the application is to use the Terminal in a HPE Container Platform Kubernetes Tenant:
 
 ![NiFi Install](/img/nifi_install.png)
+
+The steps are repeated below:
+
+```
+git clone https://github.com/snowch/kubedirector-nifi
+cd kubedirector-nifi
+./apply_app_and_cluster.sh
+```
+
+### Application Image Development
+
+Coming soon ...
