@@ -7,6 +7,10 @@ When the `startscript` gets executed for a lifecycle event it will usually need 
 
 The Config CLI allows you to retrieve metadata.
 
+## /etc/guestconfig/configmeta.json
+
+The metadata can be found in the pods in `/etc/guestconfig/configmeta.json`.
+
 ## Exploring the Config CLI
 
 I wasn't able to find documentation on the Config CLI so let's do some exploring.
