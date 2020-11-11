@@ -49,7 +49,7 @@ cd kubedirector-nifi
 
 ### Application Walkthrough
 
-The application currently resides in [kubedirector-nifi-docker-image](https://github.com/snowch/kubedirector-nifi).
+The application currently resides in [kubedirector-nifi](https://github.com/snowch/kubedirector-nifi).
 
 Inside the `kubedirector-nifi` git repository there are some files and some submodules (other git repositories):
 
