@@ -290,7 +290,7 @@ You can now exit the SSH session.
 We are finished with this exercise, so let's delete the cluster:
 
 ```
-kubectl delete  KubeDirectorCluster ubuntu18.0
+kubectl delete  KubeDirectorCluster ubuntu18.04
 ```
 
 This should return:
